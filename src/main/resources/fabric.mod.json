@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "projectilemania",
+	"version": "${version}",
+	"name": "ProjectileMania",
+	"description": "Projectiles galore!",
+	"authors": [
+		"brainage04"
+	],
+	"contact": {
+		"homepage": "https://github.com/brainage04/ProjectileMania",
+		"sources": "https://github.com/brainage04/ProjectileMania"
+	},
+	"license": "MIT",
+	"icon": "assets/projectilemania/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.github.brainage04.projectilemania.ProjectileMania"
+		],
+		"client": [
+			"com.github.brainage04.projectilemania.ProjectileManiaClient"
+		],
+		"fabric-datagen": [
+			"com.github.brainage04.projectilemania.ProjectileManiaDataGenerator"
+		]
+	},
+	"mixins": [
+		"projectilemania.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.25",
+		"minecraft": "~1.20.2",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
