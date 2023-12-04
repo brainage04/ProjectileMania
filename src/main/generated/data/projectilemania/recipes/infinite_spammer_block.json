@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "projectilemania:infinite_snowball"
+    },
+    "B": {
+      "item": "minecraft:dispenser"
+    }
+  },
+  "pattern": [
+    " A ",
+    "ABA",
+    " A "
+  ],
+  "result": {
+    "item": "projectilemania:infinite_spammer_block"
+  },
+  "show_notification": true
+}

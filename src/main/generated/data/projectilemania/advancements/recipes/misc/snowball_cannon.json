@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_infinite_snowball": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "projectilemania:infinite_snowball"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:snowball_cannon"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_infinite_snowball"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:snowball_cannon"
+    ]
+  },
+  "sends_telemetry_event": false
+}

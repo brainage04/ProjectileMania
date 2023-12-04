@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_snowball": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:snowball"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:compact_snowball"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_snowball"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:compact_snowball"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,14 @@
+{
+  "item.projectilemania.compact_snowball": "Compact Snowball",
+  "item.projectilemania.infinite_snowball": "Infinite Snowball",
+  "item.projectilemania.snowball_cannon": "Triple-barrel Snowball Cannon",
+  "item.projectilemania.compact_arrow": "Compact Arrow",
+  "item.projectilemania.infinite_arrow": "Infinite Arrow",
+  "item.projectilemania.arrow_cannon": "Triple-barrel Arrow Cannon",
+
+  "block.projectilemania.infinite_spammer_block": "Infinite Spammer Block",
+
+  "itemgroup.projectile_ingredients": "Projectile Ingredients",
+  "itemgroup.infinite_projectiles": "Infinite Projectiles",
+  "itemgroup.infinite_projectile_devices": "Infinite Projectile Devices"
+}

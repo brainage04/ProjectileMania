@@ -1,5 +1,11 @@
 package com.github.brainage04.projectilemania;
 
+import com.github.brainage04.projectilemania.block.entity.ModBlockEntities;
+import com.github.brainage04.projectilemania.entity.ModEntityTypes;
+import com.github.brainage04.projectilemania.block.ModBlocks;
+import com.github.brainage04.projectilemania.item.ModItemGroups;
+import com.github.brainage04.projectilemania.item.ModItems;
+import com.github.brainage04.projectilemania.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -12,6 +18,13 @@ public class ProjectileMania implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroups.registerItemGroups();
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
+		ModEntityTypes.registerModEntityTypes();
+		ModBlockEntities.registerBlocKEntities();
+		ModScreenHandlers.registerScreenHandlers();
+
 		LOGGER.info(MOD_NAME + " main initialised.");
 	}
 }
