@@ -2,6 +2,7 @@ package com.github.brainage04.projectilemania.block.custom;
 
 import com.github.brainage04.projectilemania.block.entity.InfiniteSpammerBlockEntity;
 import com.github.brainage04.projectilemania.block.entity.ModBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -21,6 +22,11 @@ import org.jetbrains.annotations.Nullable;
 public class InfiniteSpammerBlock extends BlockWithEntity implements BlockEntityProvider {
     public InfiniteSpammerBlock(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return null;
     }
 
     @Override

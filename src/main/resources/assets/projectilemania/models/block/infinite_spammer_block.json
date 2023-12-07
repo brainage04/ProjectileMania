@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "block/dispenser_front_vertical",
-		"1": "block/furnace_top",
-		"particle": "block/dispenser_front_vertical"
+		"0": "minecraft:block/dispenser_front_vertical",
+		"1": "minecraft:block/furnace_top",
+		"particle": "minecraft:block/dispenser_front_vertical"
 	},
 	"elements": [
 		{

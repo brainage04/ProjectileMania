@@ -1,6 +1,7 @@
 package com.github.brainage04.projectilemania.block;
 
 import com.github.brainage04.projectilemania.ProjectileMania;
+import com.github.brainage04.projectilemania.block.custom.ImpactTntBlock;
 import com.github.brainage04.projectilemania.block.custom.InfiniteSpammerBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -15,6 +16,8 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
     public static final Block INFINITE_SPAMMER_BLOCK = registerBlock("infinite_spammer_block",
             new InfiniteSpammerBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+    public static final Block IMPACT_TNT_BLOCK = registerBlock("impact_tnt_block",
+            new ImpactTntBlock(FabricBlockSettings.copyOf(Blocks.TNT)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

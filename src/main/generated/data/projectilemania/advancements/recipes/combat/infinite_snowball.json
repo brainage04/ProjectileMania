@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_infinite_snowball": {
+    "has_compact_snowball": {
       "conditions": {
         "items": [
           {
             "items": [
-              "projectilemania:infinite_snowball"
+              "projectilemania:compact_snowball"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:infinite_spammer_block"
+        "recipe": "projectilemania:infinite_snowball"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,13 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_infinite_snowball"
+      "has_compact_snowball"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:infinite_spammer_block"
+      "projectilemania:infinite_snowball"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

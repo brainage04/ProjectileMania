@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_snowball": {
+    "has_arrow": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:snowball"
+              "minecraft:arrow"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:compact_snowball"
+        "recipe": "minecraft:compact_arrow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_snowball"
+      "has_arrow"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:compact_snowball"
+      "minecraft:compact_arrow"
     ]
   }
 }

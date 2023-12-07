@@ -16,8 +16,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         super(output);
     }
 
-    private static final Item[] snowballItems = new Item[]{Items.SNOWBALL, ModItems.COMPACT_SNOWBALL, ModItems.INFINITE_SNOWBALL, ModItems.SNOWBALL_CANNON};
-    private static final Item[] arrowItems = new Item[]{Items.ARROW, ModItems.COMPACT_ARROW, ModItems.INFINITE_ARROW, ModItems.ARROW_CANNON};
+    private static final Item[] snowballItems = new Item[]{Items.SNOWBALL, ModItems.COMPACT_SNOWBALL, ModItems.INFINITE_SNOWBALL};
+    private static final Item[] arrowItems = new Item[]{Items.ARROW, ModItems.COMPACT_ARROW, ModItems.INFINITE_ARROW};
 
     private static final Item[][] allItems = new Item[][]{snowballItems, arrowItems};
 
@@ -26,25 +26,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         for (Item[] itemGroup: allItems) {
             offerReversibleCompactingRecipes(exporter, RecipeCategory.COMBAT, itemGroup[0], RecipeCategory.MISC, itemGroup[1]);
             offerCompactingRecipe(exporter, RecipeCategory.COMBAT, itemGroup[2], itemGroup[1]);
-
-            ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, itemGroup[3], 1)
-                    .pattern("AAA")
-                    .pattern("SBS")
-                    .pattern(" S ")
-                    .input('A', itemGroup[2])
-                    .input('B', Items.DISPENSER)
-                    .input('S', Items.STRING)
-                    .criterion(hasItem(itemGroup[2]), conditionsFromItem(itemGroup[2]))
-                    .offerTo(exporter, new Identifier(getRecipeName(itemGroup[3])));
         }
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.CANNON_ITEM, 1)
+                .pattern("QQQ")
+                .pattern("SDS")
+                .pattern("TST")
+                .input('Q', Items.QUARTZ_BLOCK)
+                .input('D', Items.DISPENSER)
+                .input('S', Items.STRING)
+                .input('T', Items.TNT)
+                .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.CANNON_ITEM)));
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModBlocks.INFINITE_SPAMMER_BLOCK, 1)
-                .pattern(" A ")
-                .pattern("ABA")
-                .pattern(" A ")
-                .input('A', Items.DISPENSER)
-                .input('B', ModItems.INFINITE_ARROW)
+                .pattern(" D ")
+                .pattern("DTD")
+                .pattern(" D ")
+                .input('D', Items.DISPENSER)
+                .input('T', Items.TNT)
                 .criterion(hasItem(ModItems.INFINITE_ARROW), conditionsFromItem(ModItems.INFINITE_ARROW))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INFINITE_SPAMMER_BLOCK)));
+
+        offerSingleOutputShapelessRecipe(exporter, ModBlocks.IMPACT_TNT_BLOCK, Items.TNT, "");
     }
 }

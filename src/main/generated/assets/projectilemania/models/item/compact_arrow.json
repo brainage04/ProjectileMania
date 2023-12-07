@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "projectilemania:item/snowball_cannon"
+    "layer0": "projectilemania:item/compact_arrow"
   }
 }

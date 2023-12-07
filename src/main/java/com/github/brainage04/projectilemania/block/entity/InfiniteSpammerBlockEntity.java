@@ -1,16 +1,17 @@
 package com.github.brainage04.projectilemania.block.entity;
 
-import com.github.brainage04.projectilemania.entity.custom.InfiniteSnowballEntity;
-import com.github.brainage04.projectilemania.item.ModItems;
+import com.github.brainage04.projectilemania.ProjectileMania;
 import com.github.brainage04.projectilemania.screen.InfiniteSpammerScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
@@ -23,6 +24,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import static com.github.brainage04.projectilemania.item.custom.CannonItem.hasValidItem;
+import static com.github.brainage04.projectilemania.item.custom.CannonItem.validItems;
 
 public class InfiniteSpammerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
@@ -38,14 +42,6 @@ public class InfiniteSpammerBlockEntity extends BlockEntity implements ExtendedS
     private static final float[] zVelOffsets = new float[]{0.0F, 1F, 0.0F, -1F};
     private static final float yVelocity = 1F / 16F;
 
-    public boolean isShooting() {
-        return this.isShooting;
-    }
-
-    public void toggleShooting() {
-        this.isShooting = !this.isShooting;
-    }
-
     public InfiniteSpammerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.INFINITE_SPAMMER_BLOCK_ENTITY, pos, state);
     }
@@ -57,7 +53,7 @@ public class InfiniteSpammerBlockEntity extends BlockEntity implements ExtendedS
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("block.projectilemania.infinite_spammer_block");
+        return Text.translatable("block." + ProjectileMania.MOD_ID + ".infinite_spammer_block");
     }
 
     @Override
@@ -85,40 +81,39 @@ public class InfiniteSpammerBlockEntity extends BlockEntity implements ExtendedS
         return new InfiniteSpammerScreenHandler(syncId, playerInventory, this);
     }
 
-
+    public static int ticksSinceInit = 0;
 
     public void tick(World world, BlockPos pos, BlockState state) {
         if (world.isClient()) {
             return;
         }
 
-        //if (!isShooting) return;
+        ItemStack heldItem = this.getStack(INPUT_SLOT);
 
-        if (hasValidItem()) {
+        if (hasValidItem(heldItem)) {
             Vec3d centerPos = pos.toCenterPos();
 
-            for (int i = 0; i < 4; i++) {
-                InfiniteSnowballEntity snowballEntity = new InfiniteSnowballEntity(world, centerPos.x + xOffsets[i], pos.getY() + 0.375F, centerPos.z + zOffsets[i]);
-                snowballEntity.setItem(new ItemStack(ModItems.INFINITE_SNOWBALL));
-                snowballEntity.setVelocity(xVelOffsets[i], yVelocity, zVelOffsets[i], 3F, 0.0F);
-                world.spawnEntity(snowballEntity);
-            } // shoot 4 snowballs every tick the block is active
+            if (ticksSinceInit % 2 == 0) {
+                if (heldItem.isOf(validItems[0])) {
+                    for (int i = 0; i < 4; i++) {
+                        SnowballEntity snowballEntity = new SnowballEntity(world, centerPos.x + xOffsets[i], pos.getY() + 0.375F, centerPos.z + zOffsets[i]);
+                        snowballEntity.setVelocity(xVelOffsets[i], yVelocity, zVelOffsets[i], 1.5F, 0.0F);
+                        world.spawnEntity(snowballEntity);
+                    }
+                } else if (heldItem.isOf(validItems[1])) {
+                    for (int i = 0; i < 4; i++) {
+                        ArrowEntity arrowEntity = new ArrowEntity(world, centerPos.x + xOffsets[i], pos.getY() + 0.375F, centerPos.z + zOffsets[i], new ItemStack(Items.ARROW));
+                        arrowEntity.setVelocity(xVelOffsets[i], yVelocity, zVelOffsets[i], 1.5F, 0.0F);
+                        world.spawnEntity(arrowEntity);
+                    }
+                }
+            } // shoot 10 projectiles per second in all 4 cardinal directions
 
             world.playSound(null, centerPos.x, centerPos.y, centerPos.z, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.MASTER, 0.5F, 0.5F); // plays a globalSoundEvent
         } else {
             markDirty(world, pos, state);
         }
-    }
 
-    public static final Item[] validItems = new Item[]{ModItems.INFINITE_SNOWBALL};
-
-    public boolean hasValidItem() {
-        ItemStack itemStack = this.getStack(INPUT_SLOT);
-
-        for (Item validItem : validItems) {
-            if (itemStack.isOf(validItem)) return true;
-        }
-
-        return false;
+        ticksSinceInit++;
     }
 }

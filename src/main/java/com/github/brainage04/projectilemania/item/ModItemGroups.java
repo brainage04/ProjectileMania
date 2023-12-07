@@ -35,8 +35,20 @@ public class ModItemGroups {
             .displayName(Text.translatable("itemgroup.infinite_projectile_devices"))
             .icon(() -> new ItemStack(ModBlocks.INFINITE_SPAMMER_BLOCK)).entries((displayContext, entries) -> {
                 entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
-                entries.add(ModItems.SNOWBALL_CANNON);
-                entries.add(ModItems.ARROW_CANNON);
+                entries.add(ModItems.CANNON_ITEM);
+            })
+            .build();
+
+    public static final ItemGroup PROJECTILE_MANIA_GROUP = FabricItemGroup
+            .builder()
+            .displayName(Text.translatable("itemgroup.projectile_mania_group"))
+            .icon(() -> new ItemStack(ModItems.CANNON_ITEM)).entries((displayContext, entries) -> {
+                entries.add(ModItems.COMPACT_SNOWBALL);
+                entries.add(ModItems.COMPACT_ARROW);
+                entries.add(ModItems.INFINITE_SNOWBALL);
+                entries.add(ModItems.INFINITE_ARROW);
+                entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
+                entries.add(ModItems.CANNON_ITEM);
             })
             .build();
 
@@ -57,6 +69,11 @@ public class ModItemGroups {
                 Registries.ITEM_GROUP,
                 new Identifier(ProjectileMania.MOD_ID, "infinite_projectile_devices"),
                 INFINITE_PROJECTILE_DEVICES
+        );
+        Registry.register(
+                Registries.ITEM_GROUP,
+                new Identifier(ProjectileMania.MOD_ID, "projectile_mania_group"),
+                PROJECTILE_MANIA_GROUP
         );
 
         ProjectileMania.LOGGER.info("Item Groups registered.");

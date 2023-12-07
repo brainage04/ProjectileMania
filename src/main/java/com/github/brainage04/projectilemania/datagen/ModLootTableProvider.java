@@ -12,5 +12,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(ModBlocks.INFINITE_SPAMMER_BLOCK);
+        addDrop(ModBlocks.IMPACT_TNT_BLOCK);
     }
 }

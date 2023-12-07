@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "projectilemania:compact_arrow"
+    },
+    {
+      "item": "projectilemania:compact_arrow"
+    },
+    {
+      "item": "projectilemania:compact_arrow"
+    },
+    {
+      "item": "projectilemania:compact_arrow"
+    },
+    {
+      "item": "projectilemania:compact_arrow"
+    },
+    {
+      "item": "projectilemania:compact_arrow"
+    },
+    {
+      "item": "projectilemania:compact_arrow"
+    },
+    {
+      "item": "projectilemania:compact_arrow"
+    },
+    {
+      "item": "projectilemania:compact_arrow"
+    }
+  ],
+  "result": {
+    "item": "projectilemania:infinite_arrow"
+  }
+}

@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "item": "minecraft:snowball"
+      "item": "minecraft:arrow"
     }
   },
   "pattern": [
@@ -12,6 +12,6 @@
     "###"
   ],
   "result": {
-    "item": "projectilemania:compact_snowball"
+    "item": "projectilemania:compact_arrow"
   }
 }

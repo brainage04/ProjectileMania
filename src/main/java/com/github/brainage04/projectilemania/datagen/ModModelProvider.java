@@ -15,16 +15,17 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         // infinite spammer block is using a custom model
+        
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.COMPACT_SNOWBALL, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_SNOWBALL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.SNOWBALL_CANNON, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.COMPACT_ARROW, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_ARROW, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ARROW_CANNON, Models.GENERATED);
+
+        // cannon item is using a custom model
     }
 }

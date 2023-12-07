@@ -1,14 +1,35 @@
 {
   "item.projectilemania.compact_snowball": "Compact Snowball",
   "item.projectilemania.infinite_snowball": "Infinite Snowball",
-  "item.projectilemania.snowball_cannon": "Triple-barrel Snowball Cannon",
   "item.projectilemania.compact_arrow": "Compact Arrow",
   "item.projectilemania.infinite_arrow": "Infinite Arrow",
-  "item.projectilemania.arrow_cannon": "Triple-barrel Arrow Cannon",
+  "item.projectilemania.cannon_item": "Projectile Mania Cannon",
+
+  "enchantment.projectilemania.cannon_multishot": "Cannon Multishot",
+  "enchantment.projectilemania.suicide_bomber": "Suicide Bomber",
+  "enchantment.projectilemania.snowball_overload": "Snowball Overload",
+  "enchantment.projectilemania.knock_random": "Knockrandom",
+  "enchantment.projectilemania.no_u": "No U",
+  "enchantment.projectilemania.shrapnel_bow": "Shrapnel",
+  "enchantment.projectilemania.shrapnel_crossbow": "Shrapnel",
+  "enchantment.projectilemania.shrapnel_trident": "Shrapnel",
+  "enchantment.projectilemania.i_believe_you_can_fly_bow": "I Believe You Can Fly",
+  "enchantment.projectilemania.i_believe_you_can_fly_crossbow": "I Believe You Can Fly",
+  "enchantment.projectilemania.i_believe_you_can_fly_trident": "I Believe You Can Fly",
+  "enchantment.projectilemania.get_over_here_bow": "Get Over Here",
+  "enchantment.projectilemania.get_over_here_crossbow": "Get Over Here",
+  "enchantment.projectilemania.get_over_here_trident": "Get Over Here",
+  "enchantment.projectilemania.fuck_off_bow": "Fuck Off",
+  "enchantment.projectilemania.fuck_off_crossbow": "Fuck Off",
+  "enchantment.projectilemania.fuck_off_trident": "Fuck Off",
+  "enchantment.projectilemania.random_punch_bow": "Random Punch",
+  "enchantment.projectilemania.random_punch_crossbow": "Random Punch",
+  "enchantment.projectilemania.random_punch_trident": "Random Punch",
 
   "block.projectilemania.infinite_spammer_block": "Infinite Spammer Block",
 
   "itemgroup.projectile_ingredients": "Projectile Ingredients",
   "itemgroup.infinite_projectiles": "Infinite Projectiles",
-  "itemgroup.infinite_projectile_devices": "Infinite Projectile Devices"
+  "itemgroup.infinite_projectile_devices": "Infinite Projectile Devices",
+  "itemgroup.projectile_mania_group": "Projectile Mania"
 }

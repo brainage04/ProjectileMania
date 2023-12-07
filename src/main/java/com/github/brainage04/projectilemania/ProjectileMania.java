@@ -1,7 +1,7 @@
 package com.github.brainage04.projectilemania;
 
+import com.github.brainage04.projectilemania.block.enchantments.ModEnchantments;
 import com.github.brainage04.projectilemania.block.entity.ModBlockEntities;
-import com.github.brainage04.projectilemania.entity.ModEntityTypes;
 import com.github.brainage04.projectilemania.block.ModBlocks;
 import com.github.brainage04.projectilemania.item.ModItemGroups;
 import com.github.brainage04.projectilemania.item.ModItems;
@@ -21,9 +21,10 @@ public class ProjectileMania implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
-		ModEntityTypes.registerModEntityTypes();
+		//ModEntityTypes.registerModEntityTypes();
 		ModBlockEntities.registerBlocKEntities();
 		ModScreenHandlers.registerScreenHandlers();
+		ModEnchantments.registerEnchantments();
 
 		LOGGER.info(MOD_NAME + " main initialised.");
 	}

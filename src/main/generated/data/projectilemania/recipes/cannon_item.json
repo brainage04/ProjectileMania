@@ -5,16 +5,22 @@
     "D": {
       "item": "minecraft:dispenser"
     },
+    "Q": {
+      "item": "minecraft:quartz_block"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
     "T": {
       "item": "minecraft:tnt"
     }
   },
   "pattern": [
-    " D ",
-    "DTD",
-    " D "
+    "QQQ",
+    "SDS",
+    "TST"
   ],
   "result": {
-    "item": "projectilemania:infinite_spammer_block"
+    "item": "projectilemania:cannon_item"
   }
 }
