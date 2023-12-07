@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -48,6 +49,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.INFINITE_ARROW), conditionsFromItem(ModItems.INFINITE_ARROW))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INFINITE_SPAMMER_BLOCK)));
 
-        offerSingleOutputShapelessRecipe(exporter, ModBlocks.IMPACT_TNT_BLOCK, Items.TNT, "");
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModBlocks.IMPACT_TNT_BLOCK, 2)
+                .input(Items.TNT)
+                .input(Items.GUNPOWDER)
+                .input(Items.SAND)
+                .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.IMPACT_TNT_BLOCK)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.TAG_STICK, 1)
+                .pattern("S")
+                .pattern("S")
+                .pattern("S")
+                .input('S', Items.STICK)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.TAG_STICK)));
     }
 }

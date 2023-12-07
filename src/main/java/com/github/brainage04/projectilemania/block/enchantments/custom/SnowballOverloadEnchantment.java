@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 
 public class SnowballOverloadEnchantment extends Enchantment {
     public SnowballOverloadEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.ARMOR_LEGS, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_LEGS, new EquipmentSlot[]{EquipmentSlot.LEGS});
     }
 
     @Override
@@ -22,22 +22,23 @@ public class SnowballOverloadEnchantment extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 5;
+        return 4;
     }
 
     @Override
     public void onUserDamaged(LivingEntity player, Entity attacker, int level) {
-        float amount = level * 10;
+        float amount = level * 5;
 
         World world = player.getWorld();
         Vec3d playerPos = player.getPos();
 
         for (int i = 0; i < amount; i++) {
             SnowballEntity snowballEntity = new SnowballEntity(world, player);
-            Vec3d positionVector = new Vec3d(playerPos.x + MathUtils.randomRange(-1, 1) * level, playerPos.y + MathUtils.randomRange(0, 1) * level, playerPos.z + MathUtils.randomRange(-1, 1) * level);
+            Vec3d positionVector = new Vec3d(playerPos.x + MathUtils.randomRange(-1, 1), playerPos.y + MathUtils.randomRange(player.getHeight() * 0.2, player.getHeight() * 0.8), playerPos.z + MathUtils.randomRange(-1, 1));
             snowballEntity.setPosition(positionVector);
             Vec3d velocityVector = new Vec3d(MathUtils.randomRange(-1, 1), MathUtils.randomRange(-1, 1), MathUtils.randomRange(-1, 1));
             snowballEntity.setVelocity(velocityVector);
+            world.spawnEntity(snowballEntity);
         }
 
         super.onUserDamaged(player, attacker, level);

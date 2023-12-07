@@ -2,6 +2,7 @@ package com.github.brainage04.projectilemania.item;
 
 import com.github.brainage04.projectilemania.ProjectileMania;
 import com.github.brainage04.projectilemania.item.custom.CannonItem;
+import com.github.brainage04.projectilemania.item.custom.TagStickItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -10,6 +11,7 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 public class ModItems {
     public static final Item COMPACT_SNOWBALL = registerItem("compact_snowball", new Item(new FabricItemSettings().maxCount(16)));
@@ -17,6 +19,7 @@ public class ModItems {
     public static final Item COMPACT_ARROW = registerItem("compact_arrow", new Item(new FabricItemSettings()));
     public static final Item INFINITE_ARROW = registerItem("infinite_arrow", new Item(new FabricItemSettings().maxCount(1)));
     public static final Item CANNON_ITEM = registerItem("cannon_item", new CannonItem(new FabricItemSettings().maxCount(1)));
+    public static final Item TAG_STICK = registerItem("tag_stick", new TagStickItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
 
     private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries) {
         entries.add(INFINITE_SNOWBALL);
@@ -26,6 +29,7 @@ public class ModItems {
         entries.add(INFINITE_ARROW);
 
         entries.add(CANNON_ITEM);
+        entries.add(TAG_STICK);
     }
 
     private static Item registerItem(String name, Item item) {

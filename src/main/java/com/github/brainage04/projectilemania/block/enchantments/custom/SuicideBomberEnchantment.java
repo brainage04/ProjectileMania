@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 public class SuicideBomberEnchantment extends Enchantment {
     public SuicideBomberEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.VERY_RARE, EnchantmentTarget.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST});
     }
 
     @Override
@@ -35,14 +35,14 @@ public class SuicideBomberEnchantment extends Enchantment {
         for (int i = 0; i < level; i++) {
             double rot = ((increment * i) + randomRotationAmount) * Math.PI / 180;
             double x = playerPos.getX() + 5 * Math.sin(rot);
-            double y = playerPos.getY() + player.getHeight() * 0.8f;
+            double y = playerPos.getY() + player.getHeight() * 0.5f;
             double z = playerPos.getZ() + 5 * Math.cos(rot);
 
             TntEntity tntEntity = new TntEntity(world, x, y, z, player);
 
-            Vec3d playerToAttackerVector = attacker.getPos().add(new Vec3d(x, y, z).negate());
+            Vec3d playerToAttackerVector = attacker.getPos().add(new Vec3d(x, y, z).negate()).add(new Vec3d(0, 1, 0));
 
-            tntEntity.setVelocity(playerToAttackerVector.multiply(0.5));
+            tntEntity.setVelocity(playerToAttackerVector.multiply(0.2));
             tntEntity.setFuse(10);
             world.spawnEntity(tntEntity);
         }

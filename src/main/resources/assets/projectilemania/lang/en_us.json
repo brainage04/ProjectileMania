@@ -4,6 +4,7 @@
   "item.projectilemania.compact_arrow": "Compact Arrow",
   "item.projectilemania.infinite_arrow": "Infinite Arrow",
   "item.projectilemania.cannon_item": "Projectile Mania Cannon",
+  "item.projectilemania.tag_stick": "Tag Stick",
 
   "enchantment.projectilemania.cannon_multishot": "Cannon Multishot",
   "enchantment.projectilemania.suicide_bomber": "Suicide Bomber",
@@ -25,6 +26,9 @@
   "enchantment.projectilemania.random_punch_bow": "Random Punch",
   "enchantment.projectilemania.random_punch_crossbow": "Random Punch",
   "enchantment.projectilemania.random_punch_trident": "Random Punch",
+
+  "effect.projectilemania.tag_effect": "Tagged",
+  "effect.projectilemania.tag_immune_effect": "Tag Immune",
 
   "block.projectilemania.infinite_spammer_block": "Infinite Spammer Block",
 

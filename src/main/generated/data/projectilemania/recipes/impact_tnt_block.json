@@ -1,12 +1,19 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
+  "category": "equipment",
   "ingredients": [
     {
       "item": "minecraft:tnt"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "minecraft:sand"
     }
   ],
   "result": {
+    "count": 2,
     "item": "projectilemania:impact_tnt_block"
   }
 }

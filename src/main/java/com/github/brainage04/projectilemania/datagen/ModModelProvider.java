@@ -27,5 +27,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.INFINITE_ARROW, Models.GENERATED);
 
         // cannon item is using a custom model
+        // tag stick is using a vanilla stick texture
     }
 }
