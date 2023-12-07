@@ -1,4 +1,4 @@
-package com.github.brainage04.projectilemania.block.enchantments.custom;
+package com.github.brainage04.projectilemania.enchantments.custom;
 
 import com.github.brainage04.projectilemania.util.MathUtils;
 import net.minecraft.enchantment.Enchantment;

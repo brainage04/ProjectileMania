@@ -1,6 +1,6 @@
-package com.github.brainage04.projectilemania.block.enchantments.custom;
+package com.github.brainage04.projectilemania.enchantments.custom;
 
-import com.github.brainage04.projectilemania.block.enchantments.ModEnchantments;
+import com.github.brainage04.projectilemania.enchantments.ModEnchantments;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -25,9 +25,12 @@ public class GetOverHereEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity player, Entity target, int level) {
-        Vec3d difference = target.getPos().add(player.getPos().negate()).negate();
+        Vec3d difference = target.getPos().add(player.getPos().negate()).negate(); // vector from target towards player
 
-        target.addVelocity(difference.multiply(0.04 * level));
+        if (difference.y < 0) difference.multiply(1, -1, 1); // ensure y value is always positive
+        if (difference.distanceTo(new Vec3d(0, 0, 0)) > 5) difference.normalize().multiply(5); // ensure magnitude is 5 units or less
+
+        target.addVelocity(difference.multiply(0.1 * level));
 
         super.onTargetDamaged(player, target, level);
     }

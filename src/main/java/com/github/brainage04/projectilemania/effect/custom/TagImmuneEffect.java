@@ -20,7 +20,7 @@ public class TagImmuneEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         for (int i = 0; i < 10; i++) {
             double x = entity.getX() + MathUtils.randomRange(-0.5, 0.5);
-            double y = entity.getY() + entity.getHeight() + MathUtils.randomRange(0, 0.25);
+            double y = entity.getY() + entity.getHeight() + MathUtils.randomRange(0.75, 1);
             double z = entity.getZ() + MathUtils.randomRange(-0.5, 0.5);
             entity.getWorld().addParticle(ParticleTypes.ENCHANTED_HIT, x, y, z, 0, MathUtils.randomRange(0.8, 1.2), 0);
         }

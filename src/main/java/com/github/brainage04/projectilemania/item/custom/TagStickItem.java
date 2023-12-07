@@ -35,14 +35,15 @@ public class TagStickItem extends Item {
         if (target.hasStatusEffect(ModStatusEffects.TAG_IMMUNE_EFFECT)) {
             float duration = target.getStatusEffect(ModStatusEffects.TAG_IMMUNE_EFFECT).getDuration();
 
-            ((PlayerEntity) target).sendMessage(Text.of("This player recently tagged you. Try again in " + duration + " seconds."));
+            ((PlayerEntity) target).sendMessage(Text.of("No takesies backsies! Try again in " + (duration / 20) + " seconds."), true);
 
             return false;
         }
 
         ((PlayerEntity) target).giveItemStack(new ItemStack(ModItems.TAG_STICK)); // give hit player the stick
+        ((PlayerEntity) target).sendMessage(Text.of("You have been tagged!"), true);
 
-        ((PlayerEntity) attacker).clearActiveItem(); // remove stick from the attacker (and replace tag effect with tag immune effect)
+        stack.decrement(1); // remove stick from the attacker (and replace tag effect with tag immune effect)
         ((LivingEntity) attacker).removeStatusEffect(ModStatusEffects.TAG_EFFECT);
         ((LivingEntity) attacker).addStatusEffect(new StatusEffectInstance(ModStatusEffects.TAG_IMMUNE_EFFECT, 100, 0), null);
 

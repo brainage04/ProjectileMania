@@ -1,7 +1,7 @@
-package com.github.brainage04.projectilemania.block.enchantments;
+package com.github.brainage04.projectilemania.enchantments;
 
 import com.github.brainage04.projectilemania.ProjectileMania;
-import com.github.brainage04.projectilemania.block.enchantments.custom.*;
+import com.github.brainage04.projectilemania.enchantments.custom.*;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.registry.Registries;

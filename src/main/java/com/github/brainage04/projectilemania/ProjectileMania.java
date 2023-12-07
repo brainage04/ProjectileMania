@@ -1,6 +1,6 @@
 package com.github.brainage04.projectilemania;
 
-import com.github.brainage04.projectilemania.block.enchantments.ModEnchantments;
+import com.github.brainage04.projectilemania.enchantments.ModEnchantments;
 import com.github.brainage04.projectilemania.block.entity.ModBlockEntities;
 import com.github.brainage04.projectilemania.block.ModBlocks;
 import com.github.brainage04.projectilemania.effect.ModStatusEffects;
