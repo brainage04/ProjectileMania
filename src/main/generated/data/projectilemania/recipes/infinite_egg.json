@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "projectilemania:compact_egg"
+    },
+    {
+      "item": "projectilemania:compact_egg"
+    },
+    {
+      "item": "projectilemania:compact_egg"
+    },
+    {
+      "item": "projectilemania:compact_egg"
+    },
+    {
+      "item": "projectilemania:compact_egg"
+    },
+    {
+      "item": "projectilemania:compact_egg"
+    },
+    {
+      "item": "projectilemania:compact_egg"
+    },
+    {
+      "item": "projectilemania:compact_egg"
+    },
+    {
+      "item": "projectilemania:compact_egg"
+    }
+  ],
+  "result": {
+    "item": "projectilemania:infinite_egg"
+  }
+}

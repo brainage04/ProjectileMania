@@ -1,5 +1,15 @@
-// 1.20.3	2023-12-07T18:14:22.8263679	ProjectileMania/Model Definitions
+// 1.20.3	2023-12-07T23:12:56.2975945	ProjectileMania/Model Definitions
+0b5642700d617b671e628b263b95ed56e3312f87 assets\projectilemania\blockstates\compact_tnt.json
+3cde098126037663ff30c07042e3e135c8c603bf assets\projectilemania\blockstates\impact_tnt.json
 157a468920b3726b0d53618959247aa9334c16a1 assets\projectilemania\models\item\infinite_snowball.json
+9af3923f501fc2b143e4b5b3e25293d4962250aa assets\projectilemania\models\item\infinite_spammer_block.json
 85c843029d74f0c85236062e2e19dc9a545b1fc1 assets\projectilemania\models\item\compact_snowball.json
 505f2a244700aa9fec5c7da3ba8b9be5624b2e26 assets\projectilemania\models\item\compact_arrow.json
+2da51a3af611c6ebd7ed6c7f2c4f4b7edf4a569a assets\projectilemania\models\item\compact_egg.json
+e37d47b97bb7bf277d62d65beab7b1ec2746e867 assets\projectilemania\models\item\infinite_tnt.json
+fb49c2e34394b54e6bba09ce2bebdb6a6b31fb26 assets\projectilemania\blockstates\infinite_spammer_block.json
+63824071741b1724b98574f3188f6318b832dd68 assets\projectilemania\blockstates\infinite_tnt.json
+7024fba91dabb7bf85918b4276c0e1315d434e03 assets\projectilemania\models\item\infinite_egg.json
+169a65f8fb2dbbbf4d3709bc924db8d67b45042d assets\projectilemania\models\item\compact_tnt.json
 1a6bfba8255a701b44153f38feaca3aa0ec9cebc assets\projectilemania\models\item\infinite_arrow.json
+ce76022ebcc5a6f21fda45334a629642d1a759bc assets\projectilemania\models\item\impact_tnt.json

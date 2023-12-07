@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "projectilemania:impact_tnt_block"
+          "name": "projectilemania:impact_tnt"
         }
       ],
       "rolls": 1.0

@@ -1,6 +1,7 @@
 package com.github.brainage04.projectilemania.item;
 
 import com.github.brainage04.projectilemania.ProjectileMania;
+import com.github.brainage04.projectilemania.block.ModBlocks;
 import com.github.brainage04.projectilemania.item.custom.CannonItem;
 import com.github.brainage04.projectilemania.item.custom.InfiniteAmmoItem;
 import com.github.brainage04.projectilemania.item.custom.TagStickItem;
@@ -25,13 +26,13 @@ public class ModItems {
     public static final Item COMPACT_ARROW = registerItem("compact_arrow", new Item(new FabricItemSettings()));
     public static final Item INFINITE_ARROW = registerItem("infinite_arrow", new InfiniteAmmoItem(new FabricItemSettings().maxCount(1)));
 
-    public static final Item COMPACT_TNT = registerItem("compact_tnt", new Item(new FabricItemSettings()));
-    public static final Item INFINITE_TNT = registerItem("infinite_tnt", new InfiniteAmmoItem(new FabricItemSettings().maxCount(1)));
-
     public static final Item CANNON_ITEM = registerItem("cannon_item", new CannonItem(new FabricItemSettings().maxCount(1)));
     public static final Item TAG_STICK = registerItem("tag_stick", new TagStickItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
 
     private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries) {
+        entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
+        entries.add(CANNON_ITEM);
+
         entries.add(COMPACT_SNOWBALL);
         entries.add(INFINITE_SNOWBALL);
 
@@ -41,7 +42,10 @@ public class ModItems {
         entries.add(COMPACT_ARROW);
         entries.add(INFINITE_ARROW);
 
-        entries.add(CANNON_ITEM);
+        entries.add(ModBlocks.COMPACT_TNT);
+        entries.add(ModBlocks.INFINITE_TNT);
+        entries.add(ModBlocks.IMPACT_TNT);
+
         entries.add(TAG_STICK);
     }
 

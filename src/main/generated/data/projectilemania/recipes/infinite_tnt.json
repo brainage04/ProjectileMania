@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "projectilemania:compact_tnt"
+    },
+    {
+      "item": "projectilemania:compact_tnt"
+    },
+    {
+      "item": "projectilemania:compact_tnt"
+    },
+    {
+      "item": "projectilemania:compact_tnt"
+    },
+    {
+      "item": "projectilemania:compact_tnt"
+    },
+    {
+      "item": "projectilemania:compact_tnt"
+    },
+    {
+      "item": "projectilemania:compact_tnt"
+    },
+    {
+      "item": "projectilemania:compact_tnt"
+    },
+    {
+      "item": "projectilemania:compact_tnt"
+    }
+  ],
+  "result": {
+    "item": "projectilemania:infinite_tnt"
+  }
+}

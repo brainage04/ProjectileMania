@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.TntBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -15,8 +16,12 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
     public static final Block INFINITE_SPAMMER_BLOCK = registerBlock("infinite_spammer_block",
-            new InfiniteSpammerBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
-    public static final Block IMPACT_TNT_BLOCK = registerBlock("impact_tnt_block",
+            new InfiniteSpammerBlock(FabricBlockSettings.copyOf(Blocks.DISPENSER)));
+    public static final Block COMPACT_TNT = registerBlock("compact_tnt",
+            new TntBlock(FabricBlockSettings.copyOf(Blocks.TNT)));
+    public static final Block INFINITE_TNT = registerBlock("infinite_tnt",
+            new TntBlock(FabricBlockSettings.copyOf(Blocks.TNT)));
+    public static final Block IMPACT_TNT = registerBlock("impact_tnt",
             new ImpactTntBlock(FabricBlockSettings.copyOf(Blocks.TNT)));
 
     private static Block registerBlock(String name, Block block) {

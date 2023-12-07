@@ -15,12 +15,22 @@ public class ModItemGroups {
             .builder()
             .displayName(Text.translatable("itemgroup.projectile_mania_group"))
             .icon(() -> new ItemStack(ModItems.CANNON_ITEM)).entries((displayContext, entries) -> {
-                entries.add(ModItems.COMPACT_SNOWBALL);
-                entries.add(ModItems.COMPACT_ARROW);
-                entries.add(ModItems.INFINITE_SNOWBALL);
-                entries.add(ModItems.INFINITE_ARROW);
                 entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
                 entries.add(ModItems.CANNON_ITEM);
+
+                entries.add(ModItems.COMPACT_SNOWBALL);
+                entries.add(ModItems.INFINITE_SNOWBALL);
+
+                entries.add(ModItems.COMPACT_EGG);
+                entries.add(ModItems.INFINITE_EGG);
+
+                entries.add(ModItems.COMPACT_ARROW);
+                entries.add(ModItems.INFINITE_ARROW);
+
+                entries.add(ModBlocks.COMPACT_TNT);
+                entries.add(ModBlocks.INFINITE_TNT);
+                entries.add(ModBlocks.IMPACT_TNT);
+
                 entries.add(ModItems.TAG_STICK);
             })
             .build();

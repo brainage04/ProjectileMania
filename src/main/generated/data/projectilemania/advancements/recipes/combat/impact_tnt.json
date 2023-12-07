@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:infinite_spammer_block"
+        "recipe": "minecraft:impact_tnt"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:infinite_spammer_block"
+      "minecraft:impact_tnt"
     ]
   }
 }

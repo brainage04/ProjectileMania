@@ -1,5 +1,6 @@
 package com.github.brainage04.projectilemania.datagen;
 
+import com.github.brainage04.projectilemania.block.ModBlocks;
 import com.github.brainage04.projectilemania.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -14,19 +15,25 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        // infinite spammer block is using a custom model
-        
+        blockStateModelGenerator.registerSimpleState(ModBlocks.INFINITE_SPAMMER_BLOCK);
+
+        blockStateModelGenerator.registerSimpleState(ModBlocks.COMPACT_TNT);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.INFINITE_TNT);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.IMPACT_TNT);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        // cannon item is using a custom model
+        // tag stick is using a vanilla stick texture
+
         itemModelGenerator.register(ModItems.COMPACT_SNOWBALL, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_SNOWBALL, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.COMPACT_EGG, Models.GENERATED);
+        itemModelGenerator.register(ModItems.INFINITE_EGG, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.COMPACT_ARROW, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_ARROW, Models.GENERATED);
-
-        // cannon item is using a custom model
-        // tag stick is using a vanilla stick texture
     }
 }

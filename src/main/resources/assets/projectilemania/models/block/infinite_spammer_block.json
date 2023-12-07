@@ -99,7 +99,7 @@
 			}
 		},
 		{
-			"name": "bottom2",
+			"name": "bottom",
 			"from": [0, 0, 0],
 			"to": [16, 1, 16],
 			"faces": {

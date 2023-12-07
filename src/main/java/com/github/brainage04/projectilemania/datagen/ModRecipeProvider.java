@@ -20,7 +20,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     private static final Item[] snowballItems = new Item[]{Items.SNOWBALL, ModItems.COMPACT_SNOWBALL, ModItems.INFINITE_SNOWBALL};
     private static final Item[] eggItems = new Item[]{Items.EGG, ModItems.COMPACT_EGG, ModItems.INFINITE_EGG};
     private static final Item[] arrowItems = new Item[]{Items.ARROW, ModItems.COMPACT_ARROW, ModItems.INFINITE_ARROW};
-    private static final Item[] tntItems = new Item[]{Items.TNT, ModItems.COMPACT_TNT, ModItems.INFINITE_TNT};
+    private static final Item[] tntItems = new Item[]{Items.TNT, ModBlocks.COMPACT_TNT.asItem(), ModBlocks.INFINITE_TNT.asItem()};
 
     private static final Item[][] allItems = new Item[][]{snowballItems, eggItems, arrowItems, tntItems};
 
@@ -51,12 +51,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.INFINITE_SPAMMER_BLOCK)));
 
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModBlocks.IMPACT_TNT_BLOCK, 2)
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModBlocks.IMPACT_TNT, 2)
                 .input(Items.TNT)
                 .input(Items.GUNPOWDER)
                 .input(Items.SAND)
                 .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.IMPACT_TNT_BLOCK)));
+                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.IMPACT_TNT)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.TAG_STICK, 1)
                 .pattern("S")
