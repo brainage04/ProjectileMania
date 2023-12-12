@@ -1,7 +1,7 @@
 package com.github.brainage04.projectilemania.item.custom;
 
 import com.github.brainage04.projectilemania.item.ModItems;
-import com.github.brainage04.projectilemania.util.InfiniteAmmoUtils;
+import com.github.brainage04.projectilemania.util.InfiniteAmmoUtil;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.thrown.EggEntity;
@@ -25,24 +25,24 @@ public class InfiniteAmmoItem extends Item {
 
         if (!world.isClient) {
             if (itemStack.isOf(ModItems.INFINITE_SNOWBALL)) {
-                InfiniteAmmoUtils.playSound(world, player.getPos(), InfiniteAmmoUtils.InfiniteSoundType.EGG);
+                InfiniteAmmoUtil.playSound(world, player.getPos(), InfiniteAmmoUtil.InfiniteSoundType.EGG);
 
                 SnowballEntity entity = new SnowballEntity(world, player);
                 entity.setItem(itemStack);
-                entity.setVelocity(player, player.getPitch(), player.getYaw(), InfiniteAmmoUtils.ROLL, InfiniteAmmoUtils.SPEED, InfiniteAmmoUtils.DIVERGENCE);
+                entity.setVelocity(player, player.getPitch(), player.getYaw(), InfiniteAmmoUtil.ROLL, InfiniteAmmoUtil.SPEED, InfiniteAmmoUtil.DIVERGENCE);
                 world.spawnEntity(entity);
             } else if (itemStack.isOf(ModItems.INFINITE_EGG)) {
-                InfiniteAmmoUtils.playSound(world, player.getPos(), InfiniteAmmoUtils.InfiniteSoundType.SNOWBALL);
+                InfiniteAmmoUtil.playSound(world, player.getPos(), InfiniteAmmoUtil.InfiniteSoundType.SNOWBALL);
 
                 EggEntity entity = new EggEntity(world, player);
                 entity.setItem(itemStack);
-                entity.setVelocity(player, player.getPitch(), player.getYaw(), InfiniteAmmoUtils.ROLL, InfiniteAmmoUtils.SPEED, InfiniteAmmoUtils.DIVERGENCE);
+                entity.setVelocity(player, player.getPitch(), player.getYaw(), InfiniteAmmoUtil.ROLL, InfiniteAmmoUtil.SPEED, InfiniteAmmoUtil.DIVERGENCE);
                 world.spawnEntity(entity);
             } else if (itemStack.isOf(ModItems.INFINITE_ARROW)) {
-                InfiniteAmmoUtils.playSound(world, player.getPos(), InfiniteAmmoUtils.InfiniteSoundType.ARROW);
+                InfiniteAmmoUtil.playSound(world, player.getPos(), InfiniteAmmoUtil.InfiniteSoundType.ARROW);
 
                 ArrowEntity entity = new ArrowEntity(world, player, new ItemStack(Items.ARROW));
-                entity.setVelocity(player, player.getPitch(), player.getYaw(), InfiniteAmmoUtils.ROLL, InfiniteAmmoUtils.SPEED, InfiniteAmmoUtils.DIVERGENCE);
+                entity.setVelocity(player, player.getPitch(), player.getYaw(), InfiniteAmmoUtil.ROLL, InfiniteAmmoUtil.SPEED, InfiniteAmmoUtil.DIVERGENCE);
                 world.spawnEntity(entity);
             }
         }

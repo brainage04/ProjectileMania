@@ -1,10 +1,10 @@
 package com.github.brainage04.projectilemania.item.custom;
 
 import com.github.brainage04.projectilemania.block.ModBlocks;
-import com.github.brainage04.projectilemania.enchantments.ModEnchantments;
+import com.github.brainage04.projectilemania.enchantment.ModEnchantments;
 import com.github.brainage04.projectilemania.entity.custom.ImpactTntEntity;
 import com.github.brainage04.projectilemania.item.ModItems;
-import com.github.brainage04.projectilemania.util.InfiniteAmmoUtils;
+import com.github.brainage04.projectilemania.util.InfiniteAmmoUtil;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,7 +20,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 public class CannonItem extends Item {
-    public static final Item[] validItems = new Item[]{ModItems.INFINITE_SNOWBALL, ModItems.INFINITE_EGG, ModItems.INFINITE_ARROW, ModBlocks.INFINITE_TNT.asItem()};
+    public static final Item[] validItems = new Item[]{ModItems.INFINITE_SNOWBALL, ModItems.INFINITE_EGG, ModItems.INFINITE_ARROW, ModBlocks.INFINITE_TNT.asItem(), ModBlocks.IMPACT_TNT.asItem()};
 
     public static boolean hasValidItem(ItemStack heldItem) {
         for (Item validItem : validItems) {
@@ -43,7 +43,7 @@ public class CannonItem extends Item {
 
         if (itemStack.isOf(ModItems.INFINITE_SNOWBALL)) {
             for (int i = 0; i < projectileAmount; i++) {
-                InfiniteAmmoUtils.playSound(world, player.getPos(), InfiniteAmmoUtils.InfiniteSoundType.SNOWBALL);
+                InfiniteAmmoUtil.playSound(world, player.getPos(), InfiniteAmmoUtil.InfiniteSoundType.SNOWBALL);
 
                 SnowballEntity entity = new SnowballEntity(world, player);
                 entity.setItem(itemStack);
@@ -52,7 +52,7 @@ public class CannonItem extends Item {
             }
         } else if (itemStack.isOf(ModItems.INFINITE_EGG)) {
             for (int i = 0; i < projectileAmount; i++) {
-                InfiniteAmmoUtils.playSound(world, player.getPos(), InfiniteAmmoUtils.InfiniteSoundType.EGG);
+                InfiniteAmmoUtil.playSound(world, player.getPos(), InfiniteAmmoUtil.InfiniteSoundType.EGG);
 
                 EggEntity entity = new EggEntity(world, player);
                 entity.setItem(itemStack);
@@ -61,7 +61,7 @@ public class CannonItem extends Item {
             }
         } else if (itemStack.isOf(ModItems.INFINITE_ARROW)) {
             for (int i = 0; i < projectileAmount; i++) {
-                InfiniteAmmoUtils.playSound(world, player.getPos(), InfiniteAmmoUtils.InfiniteSoundType.ARROW);
+                InfiniteAmmoUtil.playSound(world, player.getPos(), InfiniteAmmoUtil.InfiniteSoundType.ARROW);
 
                 ArrowEntity entity = new ArrowEntity(world, player, new ItemStack(Items.ARROW));
                 entity.setVelocity(player, player.getPitch(), yaw + spreadDegrees * i, 0.0F, 1.5F, 0.01F);
@@ -69,32 +69,32 @@ public class CannonItem extends Item {
             }
         } else if (itemStack.isOf(ModBlocks.INFINITE_TNT.asItem())) {
             for (int i = 0; i < projectileAmount; i++) {
-                InfiniteAmmoUtils.playSound(world, player.getPos(), InfiniteAmmoUtils.InfiniteSoundType.TNT);
+                InfiniteAmmoUtil.playSound(world, player.getPos(), InfiniteAmmoUtil.InfiniteSoundType.TNT);
 
                 TntEntity entity = new TntEntity(world, player.getX(), player.getY(), player.getZ(), null);
                 float f = -MathHelper.sin(player.getYaw() * ((float)Math.PI / 180)) * MathHelper.cos(player.getPitch() * ((float)Math.PI / 180));
                 float g = -MathHelper.sin(player.getPitch() * ((float)Math.PI / 180));
                 float h = MathHelper.cos(player.getYaw() * ((float)Math.PI / 180)) * MathHelper.cos(player.getPitch() * ((float)Math.PI / 180));
-                Vec3d velocity = new Vec3d(f, g, h).normalize().multiply(InfiniteAmmoUtils.SPEED);
+                Vec3d velocity = new Vec3d(f, g, h).normalize().multiply(InfiniteAmmoUtil.SPEED);
                 entity.setVelocity(velocity);
                 entity.setFuse(80);
                 world.spawnEntity(entity);
             }
         } else if (itemStack.isOf(ModBlocks.IMPACT_TNT.asItem())) {
             for (int i = 0; i < projectileAmount; i++) {
-                InfiniteAmmoUtils.playSound(world, player.getPos(), InfiniteAmmoUtils.InfiniteSoundType.TNT);
+                InfiniteAmmoUtil.playSound(world, player.getPos(), InfiniteAmmoUtil.InfiniteSoundType.TNT);
 
                 ImpactTntEntity entity = new ImpactTntEntity(world, player.getX(), player.getY(), player.getZ(), null);
                 float f = -MathHelper.sin(player.getYaw() * ((float)Math.PI / 180)) * MathHelper.cos(player.getPitch() * ((float)Math.PI / 180));
                 float g = -MathHelper.sin(player.getPitch() * ((float)Math.PI / 180));
                 float h = MathHelper.cos(player.getYaw() * ((float)Math.PI / 180)) * MathHelper.cos(player.getPitch() * ((float)Math.PI / 180));
-                Vec3d velocity = new Vec3d(f, g, h).normalize().multiply(InfiniteAmmoUtils.SPEED);
+                Vec3d velocity = new Vec3d(f, g, h).normalize().multiply(InfiniteAmmoUtil.SPEED);
                 entity.setVelocity(velocity);
                 entity.setFuse(80);
                 world.spawnEntity(entity);
             }
 
-            itemStack.decrement(1);
+            if (!player.isCreative()) itemStack.decrement(1);
         }
     }
 

@@ -1,6 +1,6 @@
-package com.github.brainage04.projectilemania.enchantments.custom;
+package com.github.brainage04.projectilemania.enchantment.custom;
 
-import com.github.brainage04.projectilemania.util.MathUtils;
+import com.github.brainage04.projectilemania.util.MathUtil;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -8,9 +8,9 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.Vec3d;
 
-public class RandomPunchEnchantment extends Enchantment {
-    public RandomPunchEnchantment(EnchantmentTarget enchantmentTarget) {
-        super(Rarity.RARE, enchantmentTarget, new EquipmentSlot[]{EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND});
+public class KnockrandomEnchantment extends Enchantment {
+    public KnockrandomEnchantment() {
+        super(Rarity.RARE, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -25,7 +25,7 @@ public class RandomPunchEnchantment extends Enchantment {
 
     @Override
     public void onTargetDamaged(LivingEntity user, Entity target, int level) {
-        Vec3d random = new Vec3d(MathUtils.randomRange(-1, 1), MathUtils.randomRange(-1, 1), MathUtils.randomRange(-1, 1)).normalize().multiply(2);
+        Vec3d random = new Vec3d(MathUtil.randomRange(-1, 1), MathUtil.randomRange(-1, 1), MathUtil.randomRange(-1, 1)).normalize().multiply(2);
 
         target.addVelocity(random);
 

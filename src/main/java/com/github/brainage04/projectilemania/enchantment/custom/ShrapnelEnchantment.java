@@ -1,6 +1,6 @@
-package com.github.brainage04.projectilemania.enchantments.custom;
+package com.github.brainage04.projectilemania.enchantment.custom;
 
-import com.github.brainage04.projectilemania.util.MathUtils;
+import com.github.brainage04.projectilemania.util.MathUtil;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -30,13 +30,13 @@ public class ShrapnelEnchantment extends Enchantment {
     public void onTargetDamaged(LivingEntity player, Entity target, int level) {
         float increment = 360f / level;
         double height = target.getY() + target.getHeight() * 0.8f;
-        float angleOffset = (float) MathUtils.randomRange(5, 10);
+        float angleOffset = (float) MathUtil.randomRange(5, 10);
 
         World world = player.getWorld();
 
         for (int i = 0; i < level; i++) {
             ArrowEntity arrowEntity = new ArrowEntity(world, target.getX(), height, target.getZ(), new ItemStack(Items.ARROW));
-            arrowEntity.setVelocity(target, (float) MathUtils.randomRange(5, 10), (increment * i + angleOffset) % 360, 0.0F, 2F, 0.01F);
+            arrowEntity.setVelocity(target, (float) MathUtil.randomRange(5, 10), (increment * i + angleOffset) % 360, 0.0F, 2F, 0.01F);
             world.spawnEntity(arrowEntity);
         }
 

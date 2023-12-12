@@ -11,12 +11,15 @@
   "item.projectilemania.infinite_arrow": "Infinite Arrow",
 
   "item.projectilemania.tag_stick": "Tag Stick",
+  "item.projectilemania.hot_potato": "Hot Potato",
 
   "enchantment.projectilemania.cannon_multishot": "Cannon Multishot",
   "enchantment.projectilemania.suicide_bomber": "Suicide Bomber",
   "enchantment.projectilemania.snowball_overload": "Snowball Overload",
   "enchantment.projectilemania.knock_random": "Knockrandom",
   "enchantment.projectilemania.no_u": "No U",
+  "enchantment.projectilemania.auto_smelt": "Auto Smelt",
+  "enchantment.projectilemania.excavate": "Excavate",
 
   "enchantment.projectilemania.shrapnel_bow": "Shrapnel",
   "enchantment.projectilemania.shrapnel_crossbow": "Shrapnel",
@@ -47,5 +50,9 @@
   "block.projectilemania.infinite_tnt": "Infinite TNT",
   "block.projectilemania.impact_tnt": "Impact TNT",
 
-  "itemgroup.projectile_mania_group": "Projectile Mania"
+  "item_group.projectilemania_group": "Projectile Mania",
+
+  "key_category.projectilemania.projectilemania": "Projectile Mania",
+  "key.projectilemania.gamma": "Gamma",
+  "key.projectilemania.vein_miner": "Vein Miner"
 }

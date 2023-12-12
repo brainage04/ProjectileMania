@@ -3,6 +3,7 @@ package com.github.brainage04.projectilemania.item;
 import com.github.brainage04.projectilemania.ProjectileMania;
 import com.github.brainage04.projectilemania.block.ModBlocks;
 import com.github.brainage04.projectilemania.item.custom.CannonItem;
+import com.github.brainage04.projectilemania.item.custom.HotPotatoItem;
 import com.github.brainage04.projectilemania.item.custom.InfiniteAmmoItem;
 import com.github.brainage04.projectilemania.item.custom.TagStickItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -28,6 +29,7 @@ public class ModItems {
 
     public static final Item CANNON_ITEM = registerItem("cannon_item", new CannonItem(new FabricItemSettings().maxCount(1)));
     public static final Item TAG_STICK = registerItem("tag_stick", new TagStickItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
+    public static final Item HOT_POTATO = registerItem("hot_potato", new HotPotatoItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
 
     private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);

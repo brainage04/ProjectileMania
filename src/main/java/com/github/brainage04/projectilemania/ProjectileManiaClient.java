@@ -1,5 +1,6 @@
 package com.github.brainage04.projectilemania;
 
+import com.github.brainage04.projectilemania.keybinding.ModKeyBindings;
 import com.github.brainage04.projectilemania.screen.InfiniteSpammerScreen;
 import com.github.brainage04.projectilemania.screen.ModScreenHandlers;
 import net.fabricmc.api.ClientModInitializer;
@@ -10,12 +11,8 @@ public class ProjectileManiaClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		ProjectileMania.LOGGER.info(ProjectileMania.MOD_NAME + " client initialised.");
 
-/*
-		ClientTickEvents.END_CLIENT_TICK.register((world) -> {
+		ModKeyBindings.registerKeyBindingEvents();
 
-		});
-
- */
 		HandledScreens.register(ModScreenHandlers.INFINITE_SPAMMER_SCREEN_HANDLER, InfiniteSpammerScreen::new);
 	}
 }

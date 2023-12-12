@@ -4,6 +4,7 @@ import com.github.brainage04.projectilemania.effect.ModStatusEffects;
 import com.github.brainage04.projectilemania.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.TntEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -13,8 +14,11 @@ import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
 
-public class TagStickItem extends Item {
-    public TagStickItem(Settings settings) {
+public class HotPotatoItem extends Item {
+    private static int ticksHeld = 0;
+    private static int tickLimit = 20;
+
+    public HotPotatoItem(Settings settings) {
         super(settings);
     }
 
@@ -23,6 +27,19 @@ public class TagStickItem extends Item {
         if (world.isClient) return;
 
         if (!entity.isPlayer()) return;
+
+        ticksHeld++;
+
+        if (ticksHeld % 10 == 0) {
+            ((PlayerEntity) entity).sendMessage(Text.of(((tickLimit - ticksHeld) / 20.0) + " seconds remaining"), true);
+        }
+
+        if (ticksHeld >= tickLimit) {
+            stack.decrement(stack.getCount()); // remove item
+            TntEntity tntEntity = new TntEntity(world, entity.getX(), entity.getY(), entity.getZ(), null);
+            tntEntity.setFuse(0);
+            world.spawnEntity(tntEntity);
+        }
 
         ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(ModStatusEffects.TAG_EFFECT, 10, 0), null);
         ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 10, 0), null);
@@ -42,8 +59,8 @@ public class TagStickItem extends Item {
             return false;
         }
 
-        ((PlayerEntity) target).giveItemStack(new ItemStack(ModItems.TAG_STICK)); // give hit player the item
-        ((PlayerEntity) target).sendMessage(Text.of("You have been tagged!"), false);
+        ((PlayerEntity) target).giveItemStack(new ItemStack(ModItems.HOT_POTATO)); // give hit player the item
+        ((PlayerEntity) target).sendMessage(Text.of("You have been given the hot potato!"), false);
 
         stack.decrement(stack.getCount()); // remove item from the attacker (and replace tag effect with tag immune effect)
         attacker.removeStatusEffect(ModStatusEffects.TAG_EFFECT);

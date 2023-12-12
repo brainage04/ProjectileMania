@@ -1,7 +1,7 @@
-package com.github.brainage04.projectilemania.enchantments;
+package com.github.brainage04.projectilemania.enchantment;
 
 import com.github.brainage04.projectilemania.ProjectileMania;
-import com.github.brainage04.projectilemania.enchantments.custom.*;
+import com.github.brainage04.projectilemania.enchantment.custom.*;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.registry.Registries;
@@ -29,6 +29,8 @@ public class ModEnchantments {
     public static Enchantment BOW_RANDOM_PUNCH = new RandomPunchEnchantment(EnchantmentTarget.BOW);
     public static Enchantment CROSSBOW_RANDOM_PUNCH = new RandomPunchEnchantment(EnchantmentTarget.CROSSBOW);
     public static Enchantment TRIDENT_RANDOM_PUNCH = new RandomPunchEnchantment(EnchantmentTarget.TRIDENT);
+    public static Enchantment AUTO_SMELT = new AutoSmeltEnchantment();
+    public static Enchantment EXCAVATE = new ExcavateEnchantment();
 
 
     public static void registerProjectileEnchantments(String name, Enchantment[] enchantments) {
@@ -47,6 +49,8 @@ public class ModEnchantments {
         Registry.register(Registries.ENCHANTMENT, new Identifier(ProjectileMania.MOD_ID, "snowball_overload"), SNOWBALL_OVERLOAD);
         Registry.register(Registries.ENCHANTMENT, new Identifier(ProjectileMania.MOD_ID, "knock_random"), KNOCK_RANDOM);
         Registry.register(Registries.ENCHANTMENT, new Identifier(ProjectileMania.MOD_ID, "no_u"), NO_U);
+        Registry.register(Registries.ENCHANTMENT, new Identifier(ProjectileMania.MOD_ID, "auto_smelt"), AUTO_SMELT);
+        Registry.register(Registries.ENCHANTMENT, new Identifier(ProjectileMania.MOD_ID, "excavate"), EXCAVATE);
 
         registerProjectileEnchantments("shrapnel", new Enchantment[]{BOW_SHRAPNEL, CROSSBOW_SHRAPNEL, TRIDENT_SHRAPNEL});
         registerProjectileEnchantments("i_believe_you_can_fly", new Enchantment[]{BOW_I_BELIEVE_YOU_CAN_FLY, CROSSBOW_I_BELIEVE_YOU_CAN_FLY, TRIDENT_I_BELIEVE_YOU_CAN_FLY});

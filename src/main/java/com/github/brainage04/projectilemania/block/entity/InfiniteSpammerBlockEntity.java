@@ -5,7 +5,7 @@ import com.github.brainage04.projectilemania.block.ModBlocks;
 import com.github.brainage04.projectilemania.entity.custom.ImpactTntEntity;
 import com.github.brainage04.projectilemania.item.ModItems;
 import com.github.brainage04.projectilemania.screen.InfiniteSpammerScreenHandler;
-import com.github.brainage04.projectilemania.util.InfiniteAmmoUtils;
+import com.github.brainage04.projectilemania.util.InfiniteAmmoUtil;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -29,8 +29,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import static com.github.brainage04.projectilemania.item.custom.CannonItem.hasValidItem;
-import static com.github.brainage04.projectilemania.util.InfiniteAmmoUtils.*;
+import static com.github.brainage04.projectilemania.util.InfiniteAmmoUtil.*;
 
 public class InfiniteSpammerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
@@ -86,58 +85,56 @@ public class InfiniteSpammerBlockEntity extends BlockEntity implements ExtendedS
 
         ItemStack itemStack = this.getStack(INPUT_SLOT);
 
-        if (hasValidItem(itemStack)) {
-            Vec3d centerPos = pos.toCenterPos();
+        Vec3d centerPos = pos.toCenterPos();
 
-            if (ticksSinceInit % 4 == 0) {
-                if (itemStack.isOf(ModItems.INFINITE_SNOWBALL)) {
-                    InfiniteAmmoUtils.playSound(world, centerPos, InfiniteSoundType.SNOWBALL);
-                    for (int i = 0; i < 4; i++) {
-                        SnowballEntity entity = new SnowballEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i]);
-                        entity.setItem(itemStack);
-                        entity.setVelocity(xOffsets[i], yVelocity, zOffsets[i], InfiniteAmmoUtils.SPEED, InfiniteAmmoUtils.DIVERGENCE);
-                        world.spawnEntity(entity);
-                    }
-                } else if (itemStack.isOf(ModItems.INFINITE_EGG)) {
-                    InfiniteAmmoUtils.playSound(world, centerPos, InfiniteSoundType.EGG);
-                    for (int i = 0; i < 4; i++) {
-                        EggEntity entity = new EggEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i]);
-                        entity.setItem(itemStack);
-                        entity.setVelocity(xOffsets[i], yVelocity, zOffsets[i], InfiniteAmmoUtils.SPEED, InfiniteAmmoUtils.DIVERGENCE);
-                        world.spawnEntity(entity);
-                    }
-                } else if (itemStack.isOf(ModItems.INFINITE_ARROW)) {
-                    InfiniteAmmoUtils.playSound(world, centerPos, InfiniteSoundType.ARROW);
-                    for (int i = 0; i < 4; i++) {
-                        ArrowEntity entity = new ArrowEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i], new ItemStack(Items.ARROW));
-                        entity.setVelocity(xOffsets[i], yVelocity, zOffsets[i], InfiniteAmmoUtils.SPEED, InfiniteAmmoUtils.DIVERGENCE);
-                        world.spawnEntity(entity);
-                    }
-                } else if (itemStack.isOf(ModBlocks.INFINITE_TNT.asItem())) {
-                    InfiniteAmmoUtils.playSound(world, centerPos, InfiniteSoundType.TNT);
-                    for (int i = 0; i < 4; i++) {
-                        TntEntity entity = new TntEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i], null);
-                        Vec3d velocity = new Vec3d(xOffsets[i], yVelocity, zOffsets[i]).normalize().multiply(InfiniteAmmoUtils.SPEED);
-                        entity.setVelocity(velocity);
-                        entity.setFuse(80);
-                        world.spawnEntity(entity);
-                    }
-                } else if (itemStack.isOf(ModBlocks.IMPACT_TNT.asItem())) {
-                    InfiniteAmmoUtils.playSound(world, centerPos, InfiniteSoundType.TNT);
-                    for (int i = 0; i < 4; i++) {
-                        ImpactTntEntity entity = new ImpactTntEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i], null);
-                        Vec3d velocity = new Vec3d(xOffsets[i], yVelocity, zOffsets[i]).normalize().multiply(InfiniteAmmoUtils.SPEED);
-                        entity.setVelocity(velocity);
-                        entity.setFuse(80);
-                        world.spawnEntity(entity);
+        if (ticksSinceInit % 4 == 0) {
+            if (itemStack.isOf(ModItems.INFINITE_SNOWBALL)) {
+                InfiniteAmmoUtil.playSound(world, centerPos, InfiniteSoundType.SNOWBALL);
+                for (int i = 0; i < 4; i++) {
+                    SnowballEntity entity = new SnowballEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i]);
+                    entity.setItem(itemStack);
+                    entity.setVelocity(xOffsets[i], yVelocity, zOffsets[i], InfiniteAmmoUtil.SPEED, InfiniteAmmoUtil.DIVERGENCE);
+                    world.spawnEntity(entity);
+                }
+            } else if (itemStack.isOf(ModItems.INFINITE_EGG)) {
+                InfiniteAmmoUtil.playSound(world, centerPos, InfiniteSoundType.EGG);
+                for (int i = 0; i < 4; i++) {
+                    EggEntity entity = new EggEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i]);
+                    entity.setItem(itemStack);
+                    entity.setVelocity(xOffsets[i], yVelocity, zOffsets[i], InfiniteAmmoUtil.SPEED, InfiniteAmmoUtil.DIVERGENCE);
+                    world.spawnEntity(entity);
+                }
+            } else if (itemStack.isOf(ModItems.INFINITE_ARROW)) {
+                InfiniteAmmoUtil.playSound(world, centerPos, InfiniteSoundType.ARROW);
+                for (int i = 0; i < 4; i++) {
+                    ArrowEntity entity = new ArrowEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i], new ItemStack(Items.ARROW));
+                    entity.setVelocity(xOffsets[i], yVelocity, zOffsets[i], InfiniteAmmoUtil.SPEED, InfiniteAmmoUtil.DIVERGENCE);
+                    world.spawnEntity(entity);
+                }
+            } else if (itemStack.isOf(ModBlocks.INFINITE_TNT.asItem())) {
+                InfiniteAmmoUtil.playSound(world, centerPos, InfiniteSoundType.TNT);
+                for (int i = 0; i < 4; i++) {
+                    TntEntity entity = new TntEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i], null);
+                    Vec3d velocity = new Vec3d(xOffsets[i], yVelocity, zOffsets[i]).normalize().multiply(InfiniteAmmoUtil.SPEED);
+                    entity.setVelocity(velocity);
+                    entity.setFuse(80);
+                    world.spawnEntity(entity);
+                }
+            } else if (itemStack.isOf(ModBlocks.IMPACT_TNT.asItem())) {
+                InfiniteAmmoUtil.playSound(world, centerPos, InfiniteSoundType.TNT);
+                for (int i = 0; i < 4; i++) {
+                    ImpactTntEntity entity = new ImpactTntEntity(world, centerPos.getX() + xOffsets[i], centerPos.getY(), centerPos.getZ() + zOffsets[i], null);
+                    Vec3d velocity = new Vec3d(xOffsets[i], yVelocity, zOffsets[i]).normalize().multiply(InfiniteAmmoUtil.SPEED);
+                    entity.setVelocity(velocity);
+                    entity.setFuse(80);
+                    world.spawnEntity(entity);
 
-                        itemStack.decrement(1);
-                    }
+                    itemStack.decrement(1);
                 }
             }
-        } else {
-            markDirty(world, pos, state);
         }
+
+        markDirty(world, pos, state);
 
         ticksSinceInit++;
     }

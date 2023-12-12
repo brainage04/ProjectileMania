@@ -1,6 +1,6 @@
-package com.github.brainage04.projectilemania.enchantments.custom;
+package com.github.brainage04.projectilemania.enchantment.custom;
 
-import com.github.brainage04.projectilemania.enchantments.ModEnchantments;
+import com.github.brainage04.projectilemania.enchantment.ModEnchantments;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;

@@ -70,18 +70,18 @@ public class ImpactTntBlock extends TntBlock {
     }
 
     private static void primeImpactTnt(World world, BlockPos pos, @Nullable LivingEntity igniter) {
-        if (world.isClient) {
-            return;
-        }
-        ImpactTntEntity tntEntity = new ImpactTntEntity(world, (double)pos.getX() + 0.5, pos.getY(), (double)pos.getZ() + 0.5, igniter);
-        world.spawnEntity(tntEntity);
-        world.playSound(null, tntEntity.getX(), tntEntity.getY(), tntEntity.getZ(), SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0f, 1.0f);
+        if (world.isClient) return;
+
+        ImpactTntEntity entity = new ImpactTntEntity(world, (double)pos.getX() + 0.5, pos.getY(), (double)pos.getZ() + 0.5, igniter);
+        world.spawnEntity(entity);
+        world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ENTITY_TNT_PRIMED, SoundCategory.BLOCKS, 1.0f, 1.0f);
         world.emitGameEvent((Entity)igniter, GameEvent.PRIME_FUSE, pos);
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         ItemStack itemStack = player.getStackInHand(hand);
+
         if (itemStack.isOf(Items.FLINT_AND_STEEL) || itemStack.isOf(Items.FIRE_CHARGE)) {
             primeImpactTnt(world, pos, player);
             world.setBlockState(pos, Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL_AND_REDRAW);
@@ -96,6 +96,7 @@ public class ImpactTntBlock extends TntBlock {
             player.incrementStat(Stats.USED.getOrCreateStat(item));
             return ActionResult.success(world.isClient);
         }
+
         return super.onUse(state, world, pos, player, hand, hit);
     }
 

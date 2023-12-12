@@ -5,7 +5,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class InfiniteAmmoUtils {
+public class InfiniteAmmoUtil {
     public enum InfiniteSoundType {
         SNOWBALL,
         EGG,

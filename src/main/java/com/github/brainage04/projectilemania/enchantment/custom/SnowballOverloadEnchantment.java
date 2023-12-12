@@ -1,6 +1,6 @@
-package com.github.brainage04.projectilemania.enchantments.custom;
+package com.github.brainage04.projectilemania.enchantment.custom;
 
-import com.github.brainage04.projectilemania.util.MathUtils;
+import com.github.brainage04.projectilemania.util.MathUtil;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.Entity;
@@ -34,9 +34,9 @@ public class SnowballOverloadEnchantment extends Enchantment {
 
         for (int i = 0; i < amount; i++) {
             SnowballEntity snowballEntity = new SnowballEntity(world, player);
-            Vec3d positionVector = new Vec3d(playerPos.x + MathUtils.randomRange(-1, 1), playerPos.y + MathUtils.randomRange(player.getHeight() * 0.2, player.getHeight() * 0.8), playerPos.z + MathUtils.randomRange(-1, 1));
+            Vec3d positionVector = new Vec3d(playerPos.x + MathUtil.randomRange(-1, 1), playerPos.y + MathUtil.randomRange(player.getHeight() * 0.2, player.getHeight() * 0.8), playerPos.z + MathUtil.randomRange(-1, 1));
             snowballEntity.setPosition(positionVector);
-            Vec3d velocityVector = new Vec3d(MathUtils.randomRange(-1, 1), MathUtils.randomRange(-1, 1), MathUtils.randomRange(-1, 1));
+            Vec3d velocityVector = new Vec3d(MathUtil.randomRange(-1, 1), MathUtil.randomRange(-1, 1), MathUtil.randomRange(-1, 1));
             snowballEntity.setVelocity(velocityVector);
             world.spawnEntity(snowballEntity);
         }
