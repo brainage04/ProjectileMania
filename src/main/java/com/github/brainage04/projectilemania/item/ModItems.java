@@ -49,6 +49,7 @@ public class ModItems {
         entries.add(ModBlocks.IMPACT_TNT);
 
         entries.add(TAG_STICK);
+        entries.add(HOT_POTATO);
     }
 
     private static Item registerItem(String name, Item item) {
