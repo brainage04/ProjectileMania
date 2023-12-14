@@ -13,6 +13,8 @@ public class ModModelProvider extends FabricModelProvider {
         super(output);
     }
 
+
+
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleState(ModBlocks.INFINITE_SPAMMER_BLOCK);
@@ -35,5 +37,10 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.COMPACT_ARROW, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_ARROW, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.COPPER_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COPPER_BOOTS, Models.GENERATED);
     }
 }

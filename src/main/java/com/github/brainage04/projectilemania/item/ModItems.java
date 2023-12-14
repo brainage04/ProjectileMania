@@ -2,6 +2,7 @@ package com.github.brainage04.projectilemania.item;
 
 import com.github.brainage04.projectilemania.ProjectileMania;
 import com.github.brainage04.projectilemania.block.ModBlocks;
+import com.github.brainage04.projectilemania.item.armor.CopperArmorMaterial;
 import com.github.brainage04.projectilemania.item.custom.CannonItem;
 import com.github.brainage04.projectilemania.item.custom.HotPotatoItem;
 import com.github.brainage04.projectilemania.item.custom.InfiniteAmmoItem;
@@ -9,9 +10,7 @@ import com.github.brainage04.projectilemania.item.custom.TagStickItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.EggItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -30,6 +29,13 @@ public class ModItems {
     public static final Item CANNON_ITEM = registerItem("cannon_item", new CannonItem(new FabricItemSettings().maxCount(1)));
     public static final Item TAG_STICK = registerItem("tag_stick", new TagStickItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
     public static final Item HOT_POTATO = registerItem("hot_potato", new HotPotatoItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
+
+    public static final ArmorMaterial COPPER_ARMOR_MATERIAL = new CopperArmorMaterial();
+
+    public static final Item COPPER_HELMET = registerItem("copper_helmet", new ArmorItem(COPPER_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item COPPER_CHESTPLATE = registerItem("copper_chestplate", new ArmorItem(COPPER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item COPPER_LEGGINGS = registerItem("copper_leggings", new ArmorItem(COPPER_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item COPPER_BOOTS = registerItem("copper_boots", new ArmorItem(COPPER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
@@ -50,6 +56,11 @@ public class ModItems {
 
         entries.add(TAG_STICK);
         entries.add(HOT_POTATO);
+
+        entries.add(COPPER_HELMET);
+        entries.add(COPPER_CHESTPLATE);
+        entries.add(COPPER_LEGGINGS);
+        entries.add(COPPER_BOOTS);
     }
 
     private static Item registerItem(String name, Item item) {

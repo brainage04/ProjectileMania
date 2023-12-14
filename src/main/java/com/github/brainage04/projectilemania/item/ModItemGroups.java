@@ -32,6 +32,12 @@ public class ModItemGroups {
                 entries.add(ModBlocks.IMPACT_TNT);
 
                 entries.add(ModItems.TAG_STICK);
+                entries.add(ModItems.HOT_POTATO);
+
+                entries.add(ModItems.COPPER_HELMET);
+                entries.add(ModItems.COPPER_CHESTPLATE);
+                entries.add(ModItems.COPPER_LEGGINGS);
+                entries.add(ModItems.COPPER_BOOTS);
             })
             .build();
 

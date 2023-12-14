@@ -13,6 +13,11 @@
   "item.projectilemania.tag_stick": "Tag Stick",
   "item.projectilemania.hot_potato": "Hot Potato",
 
+  "item.projectilemania.copper_helmet": "Copper Helmet",
+  "item.projectilemania.copper_chestplate": "Copper Chestplate",
+  "item.projectilemania.copper_leggings": "Copper Leggings",
+  "item.projectilemania.copper_boots": "Copper Boots",
+
   "enchantment.projectilemania.cannon_multishot": "Cannon Multishot",
   "enchantment.projectilemania.suicide_bomber": "Suicide Bomber",
   "enchantment.projectilemania.snowball_overload": "Snowball Overload",
