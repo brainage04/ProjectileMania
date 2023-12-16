@@ -114,6 +114,8 @@ public class VeinMinerC2SPacket {
 
             for (BlockPos position : matchingBlockPositions) { // check all stored blocks of the same type as the first one:
                 for (int[] offset: surroundingBlockOffsets) { // by checking all neighbouring blocks (including diagonals):
+                    if (matchingBlocksFound >= maxBlocks) break; // gather no more than 64 blocks
+
                     BlockPos adjacentBlockPos = position.add(offset[0], offset[1], offset[2]); // get adjacent block position
 
                     if (tempMatchingBlockPositions.contains(adjacentBlockPos) || matchingBlockPositions.contains(adjacentBlockPos)) continue; // skip already checked block positions
@@ -122,8 +124,6 @@ public class VeinMinerC2SPacket {
                         matchingBlocksFound++;
                         tempMatchingBlockPositions.add(adjacentBlockPos); // we want to check this block for adjacent blocks in future iterations
                     }
-
-                    if (matchingBlocksFound >= maxBlocks) break;
                 }
             }
 
