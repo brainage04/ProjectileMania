@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 public class HotPotatoItem extends Item {
     private static int ticksHeld = 0;
-    private static int tickLimit = 20;
+    private static int tickLimit = 100;
 
     public HotPotatoItem(Settings settings) {
         super(settings);
@@ -35,6 +35,8 @@ public class HotPotatoItem extends Item {
         }
 
         if (ticksHeld >= tickLimit) {
+            ticksHeld = 0;
+
             stack.decrement(stack.getCount()); // remove item
             TntEntity tntEntity = new TntEntity(world, entity.getX(), entity.getY(), entity.getZ(), null);
             tntEntity.setFuse(0);

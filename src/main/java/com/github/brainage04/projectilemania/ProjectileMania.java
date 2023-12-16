@@ -4,15 +4,14 @@ import com.github.brainage04.projectilemania.enchantment.ModEnchantments;
 import com.github.brainage04.projectilemania.block.entity.ModBlockEntities;
 import com.github.brainage04.projectilemania.block.ModBlocks;
 import com.github.brainage04.projectilemania.effect.ModStatusEffects;
-import com.github.brainage04.projectilemania.event.PlayerBlockBreakHandler;
 import com.github.brainage04.projectilemania.event.ServerTickHandler;
 import com.github.brainage04.projectilemania.item.ModItemGroups;
 import com.github.brainage04.projectilemania.item.ModItems;
+import com.github.brainage04.projectilemania.networking.ModMessages;
 import com.github.brainage04.projectilemania.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,8 +31,9 @@ public class ProjectileMania implements ModInitializer {
 		ModEnchantments.registerEnchantments();
 		ModStatusEffects.registerStatusEffects();
 
-		PlayerBlockBreakEvents.AFTER.register(new PlayerBlockBreakHandler());
-		ServerTickEvents.START_SERVER_TICK.register(new ServerTickHandler());
+		ModMessages.registerC2SPackets();
+
+		ServerTickEvents.START_WORLD_TICK.register(new ServerTickHandler());
 
 		LOGGER.info(MOD_NAME + " main initialised.");
 	}

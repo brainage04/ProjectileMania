@@ -34,6 +34,11 @@ public class ModItemGroups {
                 entries.add(ModItems.TAG_STICK);
                 entries.add(ModItems.HOT_POTATO);
 
+                entries.add(ModItems.COPPER_SWORD);
+                entries.add(ModItems.COPPER_SHOVEL);
+                entries.add(ModItems.COPPER_PICKAXE);
+                entries.add(ModItems.COPPER_AXE);
+                entries.add(ModItems.COPPER_HOE);
                 entries.add(ModItems.COPPER_HELMET);
                 entries.add(ModItems.COPPER_CHESTPLATE);
                 entries.add(ModItems.COPPER_LEGGINGS);

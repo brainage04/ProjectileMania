@@ -5,15 +5,14 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.collection.DefaultedList;
 
-public class ServerTickHandler implements ServerTickEvents.StartTick {
-
+public class ServerTickHandler implements ServerTickEvents.StartWorldTick {
     @Override
-    public void onStartTick(MinecraftServer server) {
-        for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+    public void onStartTick(ServerWorld world) {
+        for (ServerPlayerEntity player : world.getPlayers()) {
             DefaultedList<ItemStack> armor = player.getInventory().armor;
 
             boolean b1 = armor.get(0).isOf(ModItems.COPPER_HELMET);
