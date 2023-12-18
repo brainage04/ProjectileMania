@@ -24,6 +24,85 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static final Item[][] allItems = new Item[][]{snowballItems, eggItems, arrowItems, tntItems};
 
+    private static void generateSwordAndToolRecipes(Item sword, Item axe, Item shovel, Item pickaxe, Item hoe, Item ingredient, RecipeExporter exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, sword, 1)
+                .pattern("C")
+                .pattern("C")
+                .pattern("S")
+                .input('C', ingredient)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(sword)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, axe, 1)
+                .pattern("CC")
+                .pattern("CS")
+                .pattern(" S")
+                .input('C', ingredient)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(axe)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, shovel, 1)
+                .pattern("C")
+                .pattern("S")
+                .pattern("S")
+                .input('C', ingredient)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(shovel)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, pickaxe, 1)
+                .pattern("CCC")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('C', ingredient)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(pickaxe)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, hoe, 1)
+                .pattern("CC")
+                .pattern(" S")
+                .pattern(" S")
+                .input('C', ingredient)
+                .input('S', Items.STICK)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(hoe)));
+    }
+
+    private static void generateArmorRecipes(Item helmet, Item chestplate, Item leggings, Item boots, Item ingredient, RecipeExporter exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, helmet, 1)
+                .pattern("CCC")
+                .pattern("C C")
+                .input('C', ingredient)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(helmet)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, chestplate, 1)
+                .pattern("C C")
+                .pattern("CCC")
+                .pattern("CCC")
+                .input('C', ingredient)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(chestplate)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, leggings, 1)
+                .pattern("CCC")
+                .pattern("C C")
+                .pattern("C C")
+                .input('C', ingredient)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(leggings)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, boots, 1)
+                .pattern("C C")
+                .pattern("C C")
+                .input('C', ingredient)
+                .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(boots)));
+    }
+
     @Override
     public void generate(RecipeExporter exporter) {
         for (Item[] itemGroup: allItems) {
@@ -66,81 +145,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.TAG_STICK)));
 
-        // copper tools
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.COPPER_SWORD, 1)
-                .pattern("C")
-                .pattern("C")
-                .pattern("S")
-                .input('C', Items.COPPER_INGOT)
-                .input('S', Items.STICK)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_SWORD)));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.HOT_POTATO, 1)
+                .pattern("T")
+                .pattern("B")
+                .pattern("T")
+                .input('T', Items.TNT)
+                .input('B', Items.BAKED_POTATO)
+                .criterion(hasItem(Items.BAKED_POTATO), conditionsFromItem(Items.BAKED_POTATO))
+                .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOT_POTATO)));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.COPPER_AXE, 1)
-                .pattern("CC")
-                .pattern("CS")
-                .pattern(" S")
-                .input('C', Items.COPPER_INGOT)
-                .input('S', Items.STICK)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_AXE)));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.COPPER_SHOVEL, 1)
-                .pattern("C")
-                .pattern("S")
-                .pattern("S")
-                .input('C', Items.COPPER_INGOT)
-                .input('S', Items.STICK)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_SHOVEL)));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.COPPER_PICKAXE, 1)
-                .pattern("CCC")
-                .pattern(" S ")
-                .pattern(" S ")
-                .input('C', Items.COPPER_INGOT)
-                .input('S', Items.STICK)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_PICKAXE)));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.COPPER_HOE, 1)
-                .pattern("CC")
-                .pattern(" S")
-                .pattern(" S")
-                .input('C', Items.COPPER_INGOT)
-                .input('S', Items.STICK)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_HOE)));
-
-        // copper armor
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.COPPER_HELMET, 1)
-                .pattern("CCC")
-                .pattern("C C")
-                .input('C', Items.COPPER_INGOT)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_HELMET)));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.COPPER_CHESTPLATE, 1)
-                .pattern("C C")
-                .pattern("CCC")
-                .pattern("CCC")
-                .input('C', Items.COPPER_INGOT)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_CHESTPLATE)));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.COPPER_LEGGINGS, 1)
-                .pattern("CCC")
-                .pattern("C C")
-                .pattern("C C")
-                .input('C', Items.COPPER_INGOT)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_LEGGINGS)));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.COPPER_BOOTS, 1)
-                .pattern("C C")
-                .pattern("C C")
-                .input('C', Items.COPPER_INGOT)
-                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COPPER_BOOTS)));
+        // copper equipment
+        generateArmorRecipes(
+                ModItems.COPPER_HELMET,
+                ModItems.COPPER_CHESTPLATE,
+                ModItems.COPPER_LEGGINGS,
+                ModItems.COPPER_BOOTS,
+                Items.COPPER_BLOCK,
+                exporter
+        );
+        generateSwordAndToolRecipes(
+                ModItems.COPPER_SWORD,
+                ModItems.COPPER_AXE,
+                ModItems.COPPER_SHOVEL,
+                ModItems.COPPER_PICKAXE,
+                ModItems.COPPER_HOE,
+                Items.COPPER_BLOCK,
+                exporter
+        );
     }
 }

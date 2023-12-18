@@ -1,5 +1,6 @@
 package com.github.brainage04.projectilemania.item.custom.equipment.armor;
 
+import com.github.brainage04.projectilemania.effect.ModStatusEffects;
 import com.google.common.collect.ImmutableMap;
 
 import net.minecraft.entity.Entity;
@@ -16,9 +17,11 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-                    .put(
-                            ModArmorMaterials.COPPER, new StatusEffectInstance(StatusEffects.SPEED, 30, 0)
-                    ).build();
+                    .put(ModArmorMaterials.COPPER, new StatusEffectInstance(StatusEffects.SPEED, 30, 0))
+                    .put(ModArmorMaterials.REDSTONE, new StatusEffectInstance(StatusEffects.JUMP_BOOST, 30, 1))
+                    .put(ModArmorMaterials.LAPIS_LAZULI, new StatusEffectInstance(ModStatusEffects.EXPERIENCE_EFFECT, 30, 4))
+                    .put(ModArmorMaterials.EMERALD, new StatusEffectInstance(StatusEffects.LUCK, 30, 1))
+                    .build();
 
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
