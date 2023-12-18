@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:baked_potato"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "pattern": [
+    "T",
+    "B",
+    "T"
+  ],
+  "result": {
+    "item": "projectilemania:hot_potato"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "minecraft:emerald_block"
+    }
+  },
+  "pattern": [
+    "C C",
+    "C C"
+  ],
+  "result": {
+    "item": "projectilemania:emerald_boots"
+  }
+}

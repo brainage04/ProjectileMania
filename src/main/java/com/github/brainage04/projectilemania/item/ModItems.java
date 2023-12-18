@@ -48,10 +48,10 @@ public class ModItems {
 
     public static final ToolMaterial LAPIS_LAZULI_TOOL_MATERIAL = new LapisLazuliToolMaterial();
     public static final Item LAPIS_LAZULI_SWORD = registerItem("lapis_lazuli_sword", new SwordItem(LAPIS_LAZULI_TOOL_MATERIAL, 3, -2.4F, new FabricItemSettings()));
-    public static final Item LAPIS_LAZULI_SHOVEL = registerItem("lapis_lazuli_shovel", new CopperShovelItem(LAPIS_LAZULI_TOOL_MATERIAL, 1.5F, -3.0F, new FabricItemSettings()));
-    public static final Item LAPIS_LAZULI_PICKAXE = registerItem("lapis_lazuli_pickaxe", new CopperPickaxeItem(LAPIS_LAZULI_TOOL_MATERIAL, 1, -2.8F, new FabricItemSettings()));
-    public static final Item LAPIS_LAZULI_AXE = registerItem("lapis_lazuli_axe", new CopperAxeItem(LAPIS_LAZULI_TOOL_MATERIAL, 6.0F, -3.1F, new FabricItemSettings()));
-    public static final Item LAPIS_LAZULI_HOE = registerItem("lapis_lazuli_hoe", new CopperHoeItem(LAPIS_LAZULI_TOOL_MATERIAL, -2, -1.0F, new FabricItemSettings()));
+    public static final Item LAPIS_LAZULI_SHOVEL = registerItem("lapis_lazuli_shovel", new ShovelItem(LAPIS_LAZULI_TOOL_MATERIAL, 1.5F, -3.0F, new FabricItemSettings()));
+    public static final Item LAPIS_LAZULI_PICKAXE = registerItem("lapis_lazuli_pickaxe", new PickaxeItem(LAPIS_LAZULI_TOOL_MATERIAL, 1, -2.8F, new FabricItemSettings()));
+    public static final Item LAPIS_LAZULI_AXE = registerItem("lapis_lazuli_axe", new AxeItem(LAPIS_LAZULI_TOOL_MATERIAL, 6.0F, -3.1F, new FabricItemSettings()));
+    public static final Item LAPIS_LAZULI_HOE = registerItem("lapis_lazuli_hoe", new HoeItem(LAPIS_LAZULI_TOOL_MATERIAL, -2, -1.0F, new FabricItemSettings()));
     public static final Item LAPIS_LAZULI_HELMET = registerItem("lapis_lazuli_helmet", new ArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item LAPIS_LAZULI_CHESTPLATE = registerItem("lapis_lazuli_chestplate", new ArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item LAPIS_LAZULI_LEGGINGS = registerItem("lapis_lazuli_leggings", new ModArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.LEGGINGS, new FabricItemSettings())); // only one piece (leggings) is used to reduce inventoryTick calls
@@ -59,25 +59,25 @@ public class ModItems {
 
     public static final ToolMaterial REDSTONE_TOOL_MATERIAL = new RedstoneToolMaterial();
     public static final Item REDSTONE_SWORD = registerItem("redstone_sword", new SwordItem(REDSTONE_TOOL_MATERIAL, 3, -2.4F, new FabricItemSettings()));
-    public static final Item REDSTONE_SHOVEL = registerItem("redstone_shovel", new CopperShovelItem(REDSTONE_TOOL_MATERIAL, 1.5F, -3.0F, new FabricItemSettings()));
-    public static final Item REDSTONE_PICKAXE = registerItem("redstone_pickaxe", new CopperPickaxeItem(REDSTONE_TOOL_MATERIAL, 1, -2.8F, new FabricItemSettings()));
-    public static final Item REDSTONE_AXE = registerItem("redstone_axe", new CopperAxeItem(REDSTONE_TOOL_MATERIAL, 6.0F, -3.1F, new FabricItemSettings()));
-    public static final Item REDSTONE_HOE = registerItem("redstone_hoe", new CopperHoeItem(REDSTONE_TOOL_MATERIAL, -2, -1.0F, new FabricItemSettings()));
-    public static final Item REDSTONE_HELMET = registerItem("redstone_helmet", new ArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item REDSTONE_CHESTPLATE = registerItem("redstone_chestplate", new ArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final Item REDSTONE_LEGGINGS = registerItem("redstone_leggings", new ModArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.LEGGINGS, new FabricItemSettings())); // only one piece (leggings) is used to reduce inventoryTick calls
-    public static final Item REDSTONE_BOOTS = registerItem("redstone_boots", new ArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item REDSTONE_SHOVEL = registerItem("redstone_shovel", new ShovelItem(REDSTONE_TOOL_MATERIAL, 1.5F, -3.0F, new FabricItemSettings()));
+    public static final Item REDSTONE_PICKAXE = registerItem("redstone_pickaxe", new PickaxeItem(REDSTONE_TOOL_MATERIAL, 1, -2.8F, new FabricItemSettings()));
+    public static final Item REDSTONE_AXE = registerItem("redstone_axe", new AxeItem(REDSTONE_TOOL_MATERIAL, 6.0F, -3.1F, new FabricItemSettings()));
+    public static final Item REDSTONE_HOE = registerItem("redstone_hoe", new HoeItem(REDSTONE_TOOL_MATERIAL, -2, -1.0F, new FabricItemSettings()));
+    public static final Item REDSTONE_HELMET = registerItem("redstone_helmet", new ArmorItem(ModArmorMaterials.REDSTONE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item REDSTONE_CHESTPLATE = registerItem("redstone_chestplate", new ArmorItem(ModArmorMaterials.REDSTONE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item REDSTONE_LEGGINGS = registerItem("redstone_leggings", new ModArmorItem(ModArmorMaterials.REDSTONE, ArmorItem.Type.LEGGINGS, new FabricItemSettings())); // only one piece (leggings) is used to reduce inventoryTick calls
+    public static final Item REDSTONE_BOOTS = registerItem("redstone_boots", new ArmorItem(ModArmorMaterials.REDSTONE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     public static final ToolMaterial EMERALD_TOOL_MATERIAL = new EmeraldToolMaterial();
     public static final Item EMERALD_SWORD = registerItem("emerald_sword", new SwordItem(EMERALD_TOOL_MATERIAL, 3, -2.4F, new FabricItemSettings()));
-    public static final Item EMERALD_SHOVEL = registerItem("emerald_shovel", new CopperShovelItem(EMERALD_TOOL_MATERIAL, 1.5F, -3.0F, new FabricItemSettings()));
-    public static final Item EMERALD_PICKAXE = registerItem("emerald_pickaxe", new CopperPickaxeItem(EMERALD_TOOL_MATERIAL, 1, -2.8F, new FabricItemSettings()));
-    public static final Item EMERALD_AXE = registerItem("emerald_axe", new CopperAxeItem(EMERALD_TOOL_MATERIAL, 6.0F, -3.1F, new FabricItemSettings()));
-    public static final Item EMERALD_HOE = registerItem("emerald_hoe", new CopperHoeItem(EMERALD_TOOL_MATERIAL, -2, -1.0F, new FabricItemSettings()));
-    public static final Item EMERALD_HELMET = registerItem("emerald_helmet", new ArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item EMERALD_CHESTPLATE = registerItem("emerald_chestplate", new ArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final Item EMERALD_LEGGINGS = registerItem("emerald_leggings", new ModArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.LEGGINGS, new FabricItemSettings())); // only one piece (leggings) is used to reduce inventoryTick calls
-    public static final Item EMERALD_BOOTS = registerItem("emerald_boots", new ArmorItem(ModArmorMaterials.LAPIS_LAZULI, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item EMERALD_SHOVEL = registerItem("emerald_shovel", new ShovelItem(EMERALD_TOOL_MATERIAL, 1.5F, -3.0F, new FabricItemSettings()));
+    public static final Item EMERALD_PICKAXE = registerItem("emerald_pickaxe", new PickaxeItem(EMERALD_TOOL_MATERIAL, 1, -2.8F, new FabricItemSettings()));
+    public static final Item EMERALD_AXE = registerItem("emerald_axe", new AxeItem(EMERALD_TOOL_MATERIAL, 6.0F, -3.1F, new FabricItemSettings()));
+    public static final Item EMERALD_HOE = registerItem("emerald_hoe", new HoeItem(EMERALD_TOOL_MATERIAL, -2, -1.0F, new FabricItemSettings()));
+    public static final Item EMERALD_HELMET = registerItem("emerald_helmet", new ArmorItem(ModArmorMaterials.EMERALD, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item EMERALD_CHESTPLATE = registerItem("emerald_chestplate", new ArmorItem(ModArmorMaterials.EMERALD, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item EMERALD_LEGGINGS = registerItem("emerald_leggings", new ModArmorItem(ModArmorMaterials.EMERALD, ArmorItem.Type.LEGGINGS, new FabricItemSettings())); // only one piece (leggings) is used to reduce inventoryTick calls
+    public static final Item EMERALD_BOOTS = registerItem("emerald_boots", new ArmorItem(ModArmorMaterials.EMERALD, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
