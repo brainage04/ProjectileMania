@@ -2,10 +2,7 @@ package com.github.brainage04.projectilemania.item;
 
 import com.github.brainage04.projectilemania.ProjectileMania;
 import com.github.brainage04.projectilemania.block.ModBlocks;
-import com.github.brainage04.projectilemania.item.custom.CannonItem;
-import com.github.brainage04.projectilemania.item.custom.HotPotatoItem;
-import com.github.brainage04.projectilemania.item.custom.InfiniteAmmoItem;
-import com.github.brainage04.projectilemania.item.custom.TagStickItem;
+import com.github.brainage04.projectilemania.item.custom.*;
 import com.github.brainage04.projectilemania.item.custom.equipment.armor.ModArmorItem;
 import com.github.brainage04.projectilemania.item.custom.equipment.armor.ModArmorMaterials;
 import com.github.brainage04.projectilemania.item.custom.equipment.tool.EmeraldToolMaterial;
@@ -31,9 +28,10 @@ public class ModItems {
     public static final Item COMPACT_ARROW = registerItem("compact_arrow", new Item(new FabricItemSettings()));
     public static final Item INFINITE_ARROW = registerItem("infinite_arrow", new InfiniteAmmoItem(new FabricItemSettings().maxCount(1)));
 
-    public static final Item CANNON_ITEM = registerItem("cannon_item", new CannonItem(new FabricItemSettings().maxCount(1)));
+    public static final Item CANNON_ITEM = registerItem("cannon_item", new CannonItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
     public static final Item TAG_STICK = registerItem("tag_stick", new TagStickItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
     public static final Item HOT_POTATO = registerItem("hot_potato", new HotPotatoItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
+    public static final Item GRAPPLING_HOOK = registerItem("grappling_hook", new GrapplingHookItem(new FabricItemSettings().maxCount(1).rarity(Rarity.RARE)));
 
     public static final ToolMaterial COPPER_TOOL_MATERIAL = new CopperToolMaterial();
     public static final Item COPPER_SWORD = registerItem("copper_sword", new SwordItem(COPPER_TOOL_MATERIAL, 3, -2.4F, new FabricItemSettings()));
@@ -80,21 +78,7 @@ public class ModItems {
     public static final Item EMERALD_BOOTS = registerItem("emerald_boots", new ArmorItem(ModArmorMaterials.EMERALD, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static void combatItemGroupAdditions(FabricItemGroupEntries entries) {
-        entries.add(CANNON_ITEM);
-
-        entries.add(INFINITE_SNOWBALL);
-
-        entries.add(INFINITE_EGG);
-
-        entries.add(INFINITE_ARROW);
-
-        entries.add(ModBlocks.COMPACT_TNT);
-        entries.add(ModBlocks.INFINITE_TNT);
-        entries.add(ModBlocks.IMPACT_TNT);
-
-        entries.add(TAG_STICK);
-        entries.add(HOT_POTATO);
-
+        // equipment
         entries.add(COPPER_SWORD);
         entries.add(COPPER_AXE);
         entries.add(COPPER_HELMET);
@@ -122,6 +106,18 @@ public class ModItems {
         entries.add(EMERALD_CHESTPLATE);
         entries.add(EMERALD_LEGGINGS);
         entries.add(EMERALD_BOOTS);
+
+        // other
+        entries.add(INFINITE_SNOWBALL);
+        entries.add(INFINITE_EGG);
+        entries.add(INFINITE_ARROW);
+        entries.add(CANNON_ITEM);
+        entries.add(TAG_STICK);
+        entries.add(HOT_POTATO);
+
+        entries.add(ModBlocks.COMPACT_TNT);
+        entries.add(ModBlocks.INFINITE_TNT);
+        entries.add(ModBlocks.IMPACT_TNT);
     }
 
     private static void ingredientsItemGroupAdditions(FabricItemGroupEntries entries) {
@@ -135,6 +131,7 @@ public class ModItems {
     }
 
     private static void toolsItemGroupAdditions(FabricItemGroupEntries entries) {
+        // equipment
         entries.add(COPPER_SHOVEL);
         entries.add(COPPER_PICKAXE);
         entries.add(COPPER_HOE);
@@ -150,6 +147,9 @@ public class ModItems {
         entries.add(EMERALD_SHOVEL);
         entries.add(EMERALD_PICKAXE);
         entries.add(EMERALD_HOE);
+
+        // other
+        entries.add(GRAPPLING_HOOK);
     }
 
     private static Item registerItem(String name, Item item) {

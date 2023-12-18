@@ -105,6 +105,7 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.CANNON_ITEM, "Cannon Item");
         translationBuilder.add(ModItems.TAG_STICK, "Tag Stick");
         translationBuilder.add(ModItems.HOT_POTATO, "Hot Potato");
+        translationBuilder.add(ModItems.GRAPPLING_HOOK, "Grappling Hook");
 
         generateEquipmentTranslations(
                 ModItems.COPPER_SWORD,

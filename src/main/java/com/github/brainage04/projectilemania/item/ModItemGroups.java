@@ -21,20 +21,19 @@ public class ModItemGroups {
                 entries.add(ModItems.CANNON_ITEM);
 
                 entries.add(ModItems.COMPACT_SNOWBALL);
-                entries.add(ModItems.INFINITE_SNOWBALL);
-
                 entries.add(ModItems.COMPACT_EGG);
-                entries.add(ModItems.INFINITE_EGG);
-
                 entries.add(ModItems.COMPACT_ARROW);
-                entries.add(ModItems.INFINITE_ARROW);
-
                 entries.add(ModBlocks.COMPACT_TNT);
+                entries.add(ModItems.INFINITE_SNOWBALL);
+                entries.add(ModItems.INFINITE_EGG);
+                entries.add(ModItems.INFINITE_ARROW);
                 entries.add(ModBlocks.INFINITE_TNT);
+
                 entries.add(ModBlocks.IMPACT_TNT);
 
                 entries.add(ModItems.TAG_STICK);
                 entries.add(ModItems.HOT_POTATO);
+                entries.add(ModItems.GRAPPLING_HOOK);
             })
             .build();
 

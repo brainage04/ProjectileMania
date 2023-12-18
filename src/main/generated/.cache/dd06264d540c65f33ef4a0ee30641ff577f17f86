@@ -1,4 +1,4 @@
-// 1.20.4	2023-12-19T03:21:48.6070585	ProjectileMania/Model Definitions
+// 1.20.4	2023-12-19T04:08:28.3974763	ProjectileMania/Model Definitions
 381133dc5f1e9a65206123d6515f147a7ead454e assets\projectilemania\models\item\redstone_leggings.json
 85c843029d74f0c85236062e2e19dc9a545b1fc1 assets\projectilemania\models\item\compact_snowball.json
 6ccd293062ea39a0ea6d45cb8f51bca586b71fcb assets\projectilemania\models\item\emerald_leggings.json
@@ -44,8 +44,8 @@ fb49c2e34394b54e6bba09ce2bebdb6a6b31fb26 assets\projectilemania\blockstates\infi
 a803736a2f3f4b476ab5212bc54c961aab1660e2 assets\projectilemania\models\item\redstone_shovel.json
 3cde098126037663ff30c07042e3e135c8c603bf assets\projectilemania\blockstates\impact_tnt.json
 c8ae599d22a6d4337da61b7634e3fb919aa13f9e assets\projectilemania\models\item\copper_pickaxe.json
-9af3923f501fc2b143e4b5b3e25293d4962250aa assets\projectilemania\models\item\infinite_spammer_block.json
 d9db273d6f9f5b4e4d53abcae005bb557b55c213 assets\projectilemania\models\item\lapis_lazuli_shovel.json
+9af3923f501fc2b143e4b5b3e25293d4962250aa assets\projectilemania\models\item\infinite_spammer_block.json
 884b2bd6ce53edaf3cc8121ea4e168d2daf43055 assets\projectilemania\models\item\copper_shovel.json
 ed103fc6eb565d68b15f93eb32a93badd1a99221 assets\projectilemania\models\item\redstone_hoe.json
 e37d47b97bb7bf277d62d65beab7b1ec2746e867 assets\projectilemania\models\item\infinite_tnt.json

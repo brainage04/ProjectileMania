@@ -25,8 +25,9 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         // cannon item is using a custom model
-        // tag stick is using a vanilla stick texture
-        // hot potatp is using a vanilla baked potato texture
+        // tag stick is using a vanilla stick
+        // hot potato is using a vanilla baked potato
+        // grappling hook is using the fishing rod
 
         itemModelGenerator.register(ModItems.COMPACT_SNOWBALL, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_SNOWBALL, Models.HANDHELD);
