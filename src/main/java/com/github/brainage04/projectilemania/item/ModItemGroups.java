@@ -11,9 +11,11 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
-    public static final ItemGroup PROJECTILE_MANIA_GROUP = FabricItemGroup
+    public static final String MAIN_GROUP_TRANSLATION_KEY = "item_group." + ProjectileMania.MOD_ID + "_group";
+
+    public static final ItemGroup MAIN_GROUP = FabricItemGroup
             .builder()
-            .displayName(Text.translatable("item_group." + ProjectileMania.MOD_ID + "_group"))
+            .displayName(Text.translatable(MAIN_GROUP_TRANSLATION_KEY))
             .icon(() -> new ItemStack(ModItems.CANNON_ITEM)).entries((displayContext, entries) -> {
                 entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
                 entries.add(ModItems.CANNON_ITEM);
@@ -82,7 +84,7 @@ public class ModItemGroups {
         Registry.register(
                 Registries.ITEM_GROUP,
                 new Identifier(ProjectileMania.MOD_ID, ProjectileMania.MOD_ID + "_group"),
-                PROJECTILE_MANIA_GROUP
+                MAIN_GROUP
         );
 
         ProjectileMania.LOGGER.info("Item Groups registered.");

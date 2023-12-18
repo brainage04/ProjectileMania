@@ -43,7 +43,7 @@ public class HotPotatoItem extends Item {
             world.spawnEntity(tntEntity);
         }
 
-        ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(ModStatusEffects.TAG_EFFECT, 10, 0), null);
+        ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(ModStatusEffects.TAGGED_EFFECT, 10, 0), null);
         ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 10, 0), null);
 
         super.inventoryTick(stack, world, entity, slot, selected);
@@ -65,7 +65,7 @@ public class HotPotatoItem extends Item {
         ((PlayerEntity) target).sendMessage(Text.of("You have been given the hot potato!"), false);
 
         stack.decrement(stack.getCount()); // remove item from the attacker (and replace tag effect with tag immune effect)
-        attacker.removeStatusEffect(ModStatusEffects.TAG_EFFECT);
+        attacker.removeStatusEffect(ModStatusEffects.TAGGED_EFFECT);
         attacker.addStatusEffect(new StatusEffectInstance(ModStatusEffects.TAG_IMMUNE_EFFECT, 100, 0), null);
 
         return super.postHit(stack, target, attacker);

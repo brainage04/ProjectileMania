@@ -9,11 +9,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModEnchantments {
-    public static Enchantment CANNON_MULTISHOT = new CannonMultishotEnchantment();
-    public static Enchantment SUICIDE_BOMBER = new SuicideBomberEnchantment();
-    public static Enchantment SNOWBALL_OVERLOAD = new SnowballOverloadEnchantment();
-    public static Enchantment KNOCK_RANDOM = new KnockrandomEnchantment();
-    public static Enchantment NO_U = new NoUEnchantment();
     public static Enchantment BOW_SHRAPNEL = new ShrapnelEnchantment(EnchantmentTarget.BOW);
     public static Enchantment CROSSBOW_SHRAPNEL = new ShrapnelEnchantment(EnchantmentTarget.CROSSBOW);
     public static Enchantment TRIDENT_SHRAPNEL = new ShrapnelEnchantment(EnchantmentTarget.TRIDENT);
@@ -29,6 +24,11 @@ public class ModEnchantments {
     public static Enchantment BOW_RANDOM_PUNCH = new RandomPunchEnchantment(EnchantmentTarget.BOW);
     public static Enchantment CROSSBOW_RANDOM_PUNCH = new RandomPunchEnchantment(EnchantmentTarget.CROSSBOW);
     public static Enchantment TRIDENT_RANDOM_PUNCH = new RandomPunchEnchantment(EnchantmentTarget.TRIDENT);
+    public static Enchantment CANNON_MULTISHOT = new CannonMultishotEnchantment();
+    public static Enchantment SUICIDE_BOMBER = new SuicideBomberEnchantment();
+    public static Enchantment SNOWBALL_OVERLOAD = new SnowballOverloadEnchantment();
+    public static Enchantment KNOCK_RANDOM = new KnockrandomEnchantment();
+    public static Enchantment NO_U = new NoUEnchantment();
     public static Enchantment AUTO_SMELT = new AutoSmeltEnchantment();
     public static Enchantment EXCAVATE = new ExcavateEnchantment();
 

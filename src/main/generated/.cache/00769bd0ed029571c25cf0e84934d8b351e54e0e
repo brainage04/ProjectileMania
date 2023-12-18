@@ -1,3 +1,5 @@
-// 1.20.4	2023-12-15T03:07:43.6832692	ProjectileMania/Block Loot Tables
-f794f5ba9d522d62290366edb1bf95bf71f6f733 data\projectilemania\loot_tables\blocks\infinite_spammer_block.json
+// 1.20.4	2023-12-19T03:21:48.6130449	ProjectileMania/Block Loot Tables
+00ce25c1764383c58269f10a4f017b47e951fe3c data\projectilemania\loot_tables\blocks\infinite_tnt.json
 102dc9528fb37b4d04c3c1efee7c128103152041 data\projectilemania\loot_tables\blocks\impact_tnt.json
+fa7fecc0d2405d9e2b9c0bc4092319ba9aec99a6 data\projectilemania\loot_tables\blocks\compact_tnt.json
+f794f5ba9d522d62290366edb1bf95bf71f6f733 data\projectilemania\loot_tables\blocks\infinite_spammer_block.json

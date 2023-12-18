@@ -103,6 +103,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(boots)));
     }
 
+    private static void generateEquipmentRecipes(Item sword, Item axe, Item shovel, Item pickaxe, Item hoe, Item helmet, Item chestplate, Item leggings, Item boots, Item ingredient, RecipeExporter exporter) {
+        generateSwordAndToolRecipes(
+                sword,
+                axe,
+                shovel,
+                pickaxe,
+                hoe,
+                ingredient,
+                exporter
+        );
+
+        generateArmorRecipes(
+                helmet,
+                chestplate,
+                leggings,
+                boots,
+                ingredient,
+                exporter
+        );
+    }
+
     @Override
     public void generate(RecipeExporter exporter) {
         for (Item[] itemGroup: allItems) {
@@ -154,8 +175,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BAKED_POTATO), conditionsFromItem(Items.BAKED_POTATO))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.HOT_POTATO)));
 
-        // copper equipment
-        generateArmorRecipes(
+        generateEquipmentRecipes(
+                ModItems.COPPER_SWORD,
+                ModItems.COPPER_AXE,
+                ModItems.COPPER_SHOVEL,
+                ModItems.COPPER_PICKAXE,
+                ModItems.COPPER_HOE,
                 ModItems.COPPER_HELMET,
                 ModItems.COPPER_CHESTPLATE,
                 ModItems.COPPER_LEGGINGS,
@@ -163,13 +188,46 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 Items.COPPER_BLOCK,
                 exporter
         );
-        generateSwordAndToolRecipes(
-                ModItems.COPPER_SWORD,
-                ModItems.COPPER_AXE,
-                ModItems.COPPER_SHOVEL,
-                ModItems.COPPER_PICKAXE,
-                ModItems.COPPER_HOE,
-                Items.COPPER_BLOCK,
+
+        generateEquipmentRecipes(
+                ModItems.LAPIS_LAZULI_SWORD,
+                ModItems.LAPIS_LAZULI_AXE,
+                ModItems.LAPIS_LAZULI_SHOVEL,
+                ModItems.LAPIS_LAZULI_PICKAXE,
+                ModItems.LAPIS_LAZULI_HOE,
+                ModItems.LAPIS_LAZULI_HELMET,
+                ModItems.LAPIS_LAZULI_CHESTPLATE,
+                ModItems.LAPIS_LAZULI_LEGGINGS,
+                ModItems.LAPIS_LAZULI_BOOTS,
+                Items.LAPIS_BLOCK,
+                exporter
+        );
+
+        generateEquipmentRecipes(
+                ModItems.REDSTONE_SWORD,
+                ModItems.REDSTONE_AXE,
+                ModItems.REDSTONE_SHOVEL,
+                ModItems.REDSTONE_PICKAXE,
+                ModItems.REDSTONE_HOE,
+                ModItems.REDSTONE_HELMET,
+                ModItems.REDSTONE_CHESTPLATE,
+                ModItems.REDSTONE_LEGGINGS,
+                ModItems.REDSTONE_BOOTS,
+                Items.REDSTONE_BLOCK,
+                exporter
+        );
+
+        generateEquipmentRecipes(
+                ModItems.EMERALD_SWORD,
+                ModItems.EMERALD_AXE,
+                ModItems.EMERALD_SHOVEL,
+                ModItems.EMERALD_PICKAXE,
+                ModItems.EMERALD_HOE,
+                ModItems.EMERALD_HELMET,
+                ModItems.EMERALD_CHESTPLATE,
+                ModItems.EMERALD_LEGGINGS,
+                ModItems.EMERALD_BOOTS,
+                Items.EMERALD_BLOCK,
                 exporter
         );
     }

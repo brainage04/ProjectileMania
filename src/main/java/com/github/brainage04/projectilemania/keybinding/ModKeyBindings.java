@@ -10,19 +10,24 @@ import net.minecraft.text.Text;
 import org.lwjgl.glfw.GLFW;
 
 public class ModKeyBindings {
+    public static final String MAIN_CATEGORY = "key_category." + ProjectileMania.MOD_ID + "." + ProjectileMania.MOD_ID;
+
+    public static final String GAMMA_TRANSLATION_KEY = "key." + ProjectileMania.MOD_ID + ".gamma";
+    public static final String VEIN_MINER_TRANSLATION_KEY = "key." + ProjectileMania.MOD_ID + ".vein_miner";
+
     // keybinds
     public static KeyBinding gammaKeybind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-            "key." + ProjectileMania.MOD_ID + ".gamma",
+            GAMMA_TRANSLATION_KEY,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_KP_ADD,
-            "key_category." + ProjectileMania.MOD_ID + "." + ProjectileMania.MOD_ID
+            MAIN_CATEGORY
     ));
 
     public static KeyBinding veinMinerKeybind = KeyBindingHelper.registerKeyBinding(new KeyBinding(
-            "key." + ProjectileMania.MOD_ID + ".vein_miner",
+            VEIN_MINER_TRANSLATION_KEY,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_GRAVE_ACCENT,
-            "key_category." + ProjectileMania.MOD_ID + "." + ProjectileMania.MOD_ID
+            MAIN_CATEGORY
     ));
 
     public static double oldGamma = -1.0; // default value for new installs

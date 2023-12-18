@@ -46,5 +46,35 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.COPPER_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.COPPER_LEGGINGS, Models.GENERATED);
         itemModelGenerator.register(ModItems.COPPER_BOOTS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LAPIS_LAZULI_BOOTS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.REDSTONE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.REDSTONE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.REDSTONE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.REDSTONE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.REDSTONE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.REDSTONE_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REDSTONE_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REDSTONE_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.REDSTONE_BOOTS, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.EMERALD_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.EMERALD_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.EMERALD_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.EMERALD_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.EMERALD_HOE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.EMERALD_HELMET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.EMERALD_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.EMERALD_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.EMERALD_BOOTS, Models.GENERATED);
     }
 }
