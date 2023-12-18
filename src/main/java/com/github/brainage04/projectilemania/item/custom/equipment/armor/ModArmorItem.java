@@ -17,7 +17,7 @@ public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
                     .put(
-                            ModArmorMaterials.COPPER, new StatusEffectInstance(StatusEffects.HASTE, 20, 0)
+                            ModArmorMaterials.COPPER, new StatusEffectInstance(StatusEffects.HASTE, 20, 1)
                     ).build();
 
     public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {
@@ -27,7 +27,9 @@ public class ModArmorItem extends ArmorItem {
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if (!world.isClient()) {
-            if (entity instanceof PlayerEntity player) {
+            if (entity instanceof PlayerEntity) {
+                PlayerEntity player = ((PlayerEntity) entity);
+
                 if (hasFullSuitOfArmorOn(player)) {
                     evaluateArmorEffects(player);
                 }
