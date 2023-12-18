@@ -1,10 +1,14 @@
-package com.github.brainage04.projectilemania.item.custom.tool.copper;
+package com.github.brainage04.projectilemania.item.custom.equipment.tool.copper;
 
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
 public class CopperToolMaterial implements ToolMaterial {
+    public static final StatusEffectInstance copperToolEffect = new StatusEffectInstance(StatusEffects.HASTE, 30, 0);
+
     @Override
     public int getDurability() {
         return 192;

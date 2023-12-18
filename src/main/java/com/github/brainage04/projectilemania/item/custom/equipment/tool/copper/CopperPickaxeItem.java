@@ -1,13 +1,14 @@
-package com.github.brainage04.projectilemania.item.custom.tool.copper;
+package com.github.brainage04.projectilemania.item.custom.equipment.tool.copper;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.world.World;
+
+import static com.github.brainage04.projectilemania.item.custom.equipment.tool.copper.CopperToolMaterial.copperToolEffect;
 
 public class CopperPickaxeItem extends PickaxeItem {
     public CopperPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
@@ -18,7 +19,7 @@ public class CopperPickaxeItem extends PickaxeItem {
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         PlayerEntity player = ((PlayerEntity) entity);
 
-        if (selected) player.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, 20, 0));
+        if (selected) player.addStatusEffect(new StatusEffectInstance(copperToolEffect.getEffectType(), copperToolEffect.getDuration(), copperToolEffect.getAmplifier()));
 
         super.inventoryTick(stack, world, entity, slot, selected);
     }

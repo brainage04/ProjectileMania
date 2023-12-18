@@ -8,7 +8,7 @@ import com.github.brainage04.projectilemania.item.custom.InfiniteAmmoItem;
 import com.github.brainage04.projectilemania.item.custom.TagStickItem;
 import com.github.brainage04.projectilemania.item.custom.equipment.armor.ModArmorItem;
 import com.github.brainage04.projectilemania.item.custom.equipment.armor.ModArmorMaterials;
-import com.github.brainage04.projectilemania.item.custom.tool.copper.*;
+import com.github.brainage04.projectilemania.item.custom.equipment.tool.copper.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -38,10 +38,10 @@ public class ModItems {
     public static final Item COPPER_PICKAXE = registerItem("copper_pickaxe", new CopperPickaxeItem(COPPER_TOOL_MATERIAL, 1, -2.8F, new FabricItemSettings()));
     public static final Item COPPER_AXE = registerItem("copper_axe", new CopperAxeItem(COPPER_TOOL_MATERIAL, 6.0F, -3.1F, new FabricItemSettings()));
     public static final Item COPPER_HOE = registerItem("copper_hoe", new CopperHoeItem(COPPER_TOOL_MATERIAL, -2, -1.0F, new FabricItemSettings()));
-    public static final Item COPPER_HELMET = registerItem("copper_helmet", new ModArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item COPPER_CHESTPLATE = registerItem("copper_chestplate", new ModArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final Item COPPER_LEGGINGS = registerItem("copper_leggings", new ModArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
-    public static final Item COPPER_BOOTS = registerItem("copper_boots", new ModArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item COPPER_HELMET = registerItem("copper_helmet", new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item COPPER_CHESTPLATE = registerItem("copper_chestplate", new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item COPPER_LEGGINGS = registerItem("copper_leggings", new ModArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, new FabricItemSettings())); // only one piece (leggings) is used to reduce inventoryTick calls
+    public static final Item COPPER_BOOTS = registerItem("copper_boots", new ArmorItem(ModArmorMaterials.COPPER, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries) {
         entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);

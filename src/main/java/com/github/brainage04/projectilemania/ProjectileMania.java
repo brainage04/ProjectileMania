@@ -33,7 +33,7 @@ public class ProjectileMania implements ModInitializer {
 
 		ModMessages.registerC2SPackets();
 
-		ServerTickEvents.START_WORLD_TICK.register(new ServerTickHandler());
+		ServerTickEvents.END_WORLD_TICK.register(new ServerTickHandler());
 
 		LOGGER.info(MOD_NAME + " main initialised.");
 	}
