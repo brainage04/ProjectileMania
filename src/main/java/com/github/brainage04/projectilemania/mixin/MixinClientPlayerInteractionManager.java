@@ -26,12 +26,7 @@ public abstract class MixinClientPlayerInteractionManager {
     @Inject(method = "breakBlock", at = @At(value = "HEAD"))
     private void VEIN_MINER$BREAKBLOCK(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         if (ModKeyBindings.veinMinerKeybind.isPressed()) {
-            VEIN_MINER$activate(pos);
+            ModMessages.sendVeinMinerPacket(pos, Registries.BLOCK.getId(this.client.world.getBlockState(pos).getBlock()));
         }
-    }
-
-    @Unique
-    private void VEIN_MINER$activate(BlockPos pos) {
-        ModMessages.sendVeinMinerPacket(pos, Registries.BLOCK.getId(this.client.world.getBlockState(pos).getBlock()));
     }
 }
