@@ -43,6 +43,36 @@ public class ModItemGroups {
                 entries.add(ModItems.COPPER_CHESTPLATE);
                 entries.add(ModItems.COPPER_LEGGINGS);
                 entries.add(ModItems.COPPER_BOOTS);
+
+                entries.add(ModItems.REDSTONE_SWORD);
+                entries.add(ModItems.REDSTONE_SHOVEL);
+                entries.add(ModItems.REDSTONE_PICKAXE);
+                entries.add(ModItems.REDSTONE_AXE);
+                entries.add(ModItems.REDSTONE_HOE);
+                entries.add(ModItems.REDSTONE_HELMET);
+                entries.add(ModItems.REDSTONE_CHESTPLATE);
+                entries.add(ModItems.REDSTONE_LEGGINGS);
+                entries.add(ModItems.REDSTONE_BOOTS);
+
+                entries.add(ModItems.LAPIS_LAZULI_SWORD);
+                entries.add(ModItems.LAPIS_LAZULI_SHOVEL);
+                entries.add(ModItems.LAPIS_LAZULI_PICKAXE);
+                entries.add(ModItems.LAPIS_LAZULI_AXE);
+                entries.add(ModItems.LAPIS_LAZULI_HOE);
+                entries.add(ModItems.LAPIS_LAZULI_HELMET);
+                entries.add(ModItems.LAPIS_LAZULI_CHESTPLATE);
+                entries.add(ModItems.LAPIS_LAZULI_LEGGINGS);
+                entries.add(ModItems.LAPIS_LAZULI_BOOTS);
+
+                entries.add(ModItems.EMERALD_SWORD);
+                entries.add(ModItems.EMERALD_SHOVEL);
+                entries.add(ModItems.EMERALD_PICKAXE);
+                entries.add(ModItems.EMERALD_AXE);
+                entries.add(ModItems.EMERALD_HOE);
+                entries.add(ModItems.EMERALD_HELMET);
+                entries.add(ModItems.EMERALD_CHESTPLATE);
+                entries.add(ModItems.EMERALD_LEGGINGS);
+                entries.add(ModItems.EMERALD_BOOTS);
             })
             .build();
 
