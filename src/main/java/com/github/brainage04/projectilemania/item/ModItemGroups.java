@@ -35,7 +35,15 @@ public class ModItemGroups {
 
                 entries.add(ModItems.TAG_STICK);
                 entries.add(ModItems.HOT_POTATO);
+            })
+            .build();
 
+    public static final String EQUIPMENT_GROUP_TRANSLATION_KEY = "item_group." + ProjectileMania.MOD_ID + "_group";
+
+    public static final ItemGroup EQUIPMENT_GROUP = FabricItemGroup
+            .builder()
+            .displayName(Text.translatable(EQUIPMENT_GROUP_TRANSLATION_KEY))
+            .icon(() -> new ItemStack(ModItems.LAPIS_LAZULI_SWORD)).entries((displayContext, entries) -> {
                 entries.add(ModItems.COPPER_SWORD);
                 entries.add(ModItems.COPPER_SHOVEL);
                 entries.add(ModItems.COPPER_PICKAXE);
@@ -83,8 +91,13 @@ public class ModItemGroups {
 
         Registry.register(
                 Registries.ITEM_GROUP,
-                new Identifier(ProjectileMania.MOD_ID, ProjectileMania.MOD_ID + "_group"),
+                new Identifier(ProjectileMania.MOD_ID,"main_group"),
                 MAIN_GROUP
+        );
+        Registry.register(
+                Registries.ITEM_GROUP,
+                new Identifier(ProjectileMania.MOD_ID,"equipment_group"),
+                EQUIPMENT_GROUP
         );
 
         ProjectileMania.LOGGER.info("Item Groups registered.");

@@ -79,17 +79,13 @@ public class ModItems {
     public static final Item EMERALD_LEGGINGS = registerItem("emerald_leggings", new ModArmorItem(ModArmorMaterials.EMERALD, ArmorItem.Type.LEGGINGS, new FabricItemSettings())); // only one piece (leggings) is used to reduce inventoryTick calls
     public static final Item EMERALD_BOOTS = registerItem("emerald_boots", new ArmorItem(ModArmorMaterials.EMERALD, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
-    private static void addItemsToIngredientTabItemGroup(FabricItemGroupEntries entries) {
-        entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
+    private static void combatItemGroupAdditions(FabricItemGroupEntries entries) {
         entries.add(CANNON_ITEM);
 
-        entries.add(COMPACT_SNOWBALL);
         entries.add(INFINITE_SNOWBALL);
 
-        entries.add(COMPACT_EGG);
         entries.add(INFINITE_EGG);
 
-        entries.add(COMPACT_ARROW);
         entries.add(INFINITE_ARROW);
 
         entries.add(ModBlocks.COMPACT_TNT);
@@ -100,44 +96,60 @@ public class ModItems {
         entries.add(HOT_POTATO);
 
         entries.add(COPPER_SWORD);
-        entries.add(COPPER_SHOVEL);
-        entries.add(COPPER_PICKAXE);
         entries.add(COPPER_AXE);
-        entries.add(COPPER_HOE);
         entries.add(COPPER_HELMET);
         entries.add(COPPER_CHESTPLATE);
         entries.add(COPPER_LEGGINGS);
         entries.add(COPPER_BOOTS);
 
         entries.add(REDSTONE_SWORD);
-        entries.add(REDSTONE_SHOVEL);
-        entries.add(REDSTONE_PICKAXE);
         entries.add(REDSTONE_AXE);
-        entries.add(REDSTONE_HOE);
         entries.add(REDSTONE_HELMET);
         entries.add(REDSTONE_CHESTPLATE);
         entries.add(REDSTONE_LEGGINGS);
         entries.add(REDSTONE_BOOTS);
 
         entries.add(LAPIS_LAZULI_SWORD);
-        entries.add(LAPIS_LAZULI_SHOVEL);
-        entries.add(LAPIS_LAZULI_PICKAXE);
         entries.add(LAPIS_LAZULI_AXE);
-        entries.add(LAPIS_LAZULI_HOE);
         entries.add(LAPIS_LAZULI_HELMET);
         entries.add(LAPIS_LAZULI_CHESTPLATE);
         entries.add(LAPIS_LAZULI_LEGGINGS);
         entries.add(LAPIS_LAZULI_BOOTS);
 
         entries.add(EMERALD_SWORD);
-        entries.add(EMERALD_SHOVEL);
-        entries.add(EMERALD_PICKAXE);
         entries.add(EMERALD_AXE);
-        entries.add(EMERALD_HOE);
         entries.add(EMERALD_HELMET);
         entries.add(EMERALD_CHESTPLATE);
         entries.add(EMERALD_LEGGINGS);
         entries.add(EMERALD_BOOTS);
+    }
+
+    private static void ingredientsItemGroupAdditions(FabricItemGroupEntries entries) {
+        entries.add(COMPACT_SNOWBALL);
+        entries.add(COMPACT_EGG);
+        entries.add(COMPACT_ARROW);
+    }
+
+    private static void redstoneItemGroupAdditions(FabricItemGroupEntries entries) {
+        entries.add(ModBlocks.INFINITE_SPAMMER_BLOCK);
+    }
+
+    private static void toolsItemGroupAdditions(FabricItemGroupEntries entries) {
+        entries.add(COPPER_SHOVEL);
+        entries.add(COPPER_PICKAXE);
+        entries.add(COPPER_HOE);
+
+        entries.add(REDSTONE_SHOVEL);
+        entries.add(REDSTONE_PICKAXE);
+        entries.add(REDSTONE_HOE);
+
+        entries.add(LAPIS_LAZULI_SHOVEL);
+        entries.add(LAPIS_LAZULI_PICKAXE);
+        entries.add(LAPIS_LAZULI_HOE);
+
+        entries.add(EMERALD_SHOVEL);
+        entries.add(EMERALD_PICKAXE);
+        entries.add(EMERALD_HOE);
     }
 
     private static Item registerItem(String name, Item item) {
@@ -147,7 +159,10 @@ public class ModItems {
     public static void registerModItems() {
         ProjectileMania.LOGGER.info("Registering Mod Items for " + ProjectileMania.MOD_NAME + "...");
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::addItemsToIngredientTabItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::combatItemGroupAdditions);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::ingredientsItemGroupAdditions);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(ModItems::redstoneItemGroupAdditions);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(ModItems::toolsItemGroupAdditions);
 
         ProjectileMania.LOGGER.info("Mod Items registered.");
     }
